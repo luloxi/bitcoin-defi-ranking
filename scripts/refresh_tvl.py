@@ -105,6 +105,7 @@ def main():
         print("✅ data/ranking.json updated")
     else:
         print("⚠ No changes — DeFiLlama unreachable or all slugs N/D")
+        print("  (This is OK — continuing with existing data)")
 
 if __name__ == "__main__":
     main()
