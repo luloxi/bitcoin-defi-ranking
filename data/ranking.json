@@ -1,7 +1,7 @@
 {
   "meta": {
     "updated_at": "2026-05-27T00:00:00-03:00",
-    "source": "Research compiled from Coin Bureau, Messari, Spark, Babylon, DeFiLlama (may 2026)"
+    "source": "Research: Coin Bureau, Messari, Spark, Babylon, DeFiLlama (may 2026). TVL from DeFiLlama live API."
   },
   "platforms": [
     {
@@ -10,22 +10,31 @@
       "name": "Babylon",
       "url": "https://babylonlabs.io",
       "blockchain": "Bitcoin L1",
-      "type": "Native BTC Staking",
-      "mechanism": "EOTS (Extractable One-Time Signatures)",
-      "mechanism_note": "BTC bloqueado directo en wallet propio, sin bridge ni wrap",
+      "category": "Native BTC Staking",
+      "mechanism": "EOTS — Extractable One-Time Signatures",
+      "mechanism_note": "BTC bloqueado directo en wallet propio, sin bridge ni wrap. Finality providers anclan a BTC.",
       "apy_base": 0.42,
-      "apy_note": "~0.41–0.42%",
       "apy_display": "0.42%",
-      "tvl_btc": 57000,
+      "apy_note": "~0.41-0.42%",
       "tvl_usd": 4600000000,
+      "tvl_btc": 57000,
       "tvl_display": "$4.6B (~57K BTC)",
       "risk": "low",
       "risk_label": "Bajo",
-      "audit": "N/A (on-chain mechanism)",
       "custody": "Non-custodial",
+      "audit": "N/A — mecanismo on-chain de Bitcoin",
       "factors": {
-        "positive": ["No bridge/wrap — BTC en wallet propio", "57K+ BTC stakeados institucionalmente", "~250 Finality Providers distribuidos globalmente", "Top 4 holder de BTC post-ETF issuers", "Sin smart contract externo para el staking base"],
-        "negative": ["APY bajo (~0.4%) comparado con otros protocolos", "Phase 2 recién iniciada Q1 2025 —TVL puede retraerse"]
+        "positive": [
+          "No bridge/wrap — BTC en wallet propio",
+          "57K+ BTC stakeados (institucional)",
+          "~250 Finality Providers distribuidos",
+          "Top 4 holder de BTC post-ETF issuers",
+          "Sin smart contract externo"
+        ],
+        "negative": [
+          "APY bajo (~0.4%)",
+          "Phase 2 recién iniciada — TVL retraíble"
+        ]
       }
     },
     {
@@ -34,286 +43,1335 @@
       "name": "Core Chain",
       "url": "https://coredao.org",
       "blockchain": "Bitcoin L1",
-      "type": "Satoshi Plus Consensus",
-      "mechanism": "CLTV Time-Lock en wallet propio",
-      "mechanism_note": "BTC nunca sale del wallet — usa opcode CLTV de Bitcoin",
+      "category": "Satoshi Plus Consensus",
+      "mechanism": "CLTV Time-Lock — opcode Bitcoin",
+      "mechanism_note": "BTC nunca sale del wallet. CLTV opcode lo bloquea en el tiempo. Hybrido PoW + DPoS.",
       "apy_base": 5.4,
-      "apy_note": "Hasta ~5.4%",
       "apy_display": "5.4%",
-      "tvl_btc": null,
+      "apy_note": "Hasta ~5.4% (en CORE tokens)",
       "tvl_usd": 500000000,
+      "tvl_btc": null,
       "tvl_display": "$500M+",
       "risk": "med_low",
       "risk_label": "Bajo-Medio",
-      "audit": "Partial audits (nuevos audits en curso)",
       "custody": "Non-custodial",
+      "audit": "Auditorías parciales (proyecto nuevo)",
       "factors": {
-        "positive": ["BTC en tu wallet — no requiere wrap ni bridge", "Combina PoW (hash de Bitcoin) + DPoS para consenso híbrido", "Sin intermediaros para el staking"],
-        "negative": ["Proyecto relativamente nuevo (lanzado 2023)", "TVL moderado vs. protocolos establecidos", "CORE token como parte del yield — exposición a tokenomics"]
-      }
-    },
-    {
-      "id": "aave-btc",
-      "rank": 3,
-      "name": "Aave — wBTC / tBTC",
-      "url": "https://aave.com",
-      "blockchain": "Ethereum",
-      "type": "Lending",
-      "mechanism": "Wrapped BTC (wBTC / tBTC) lending en Aave v3",
-      "mechanism_note": "Collateral de wrapped BTC; interés variable según demanda",
-      "apy_base": 3.5,
-      "apy_note": "2–5% (variable)",
-      "apy_display": "2–5%",
-      "tvl_btc": null,
-      "tvl_usd": 25000000000,
-      "tvl_display": "$25B+ (protocolo total)",
-      "risk": "low",
-      "risk_label": "Bajo",
-      "audit": "Múltiples audits: Trail of Bits, OpenZeppelin, Sigma Prime",
-      "custody": "Custodial (bridge wBTC/tBTC)",
-      "factors": {
-        "positive": ["7+ años sin exploits majeurs", "TVL más grande de todo DeFi ($25B+)", "Múltiples audits y bug bounty activo", "TVL estable = interés predecible"],
-        "negative": ["Dependencia de wBTC/tBTC bridge — riesgo de centralización", "Exposición a Ethereum L1 fees y slashing risk"]
+        "positive": [
+          "BTC en wallet propio — sin wrap ni bridge",
+          "Hybrido PoW + DPoS — security hereda Bitcoin",
+          "Sin intermediarios"
+        ],
+        "negative": [
+          "Proyecto nuevo (2023)",
+          "TVL moderado vs protocolos establecidos",
+          "Yield en CORE token — exposición a tokenomics"
+        ]
       }
     },
     {
       "id": "stacks-sbtc",
-      "rank": 4,
-      "name": "Stacks — sBTC Base Yield",
+      "rank": 3,
+      "name": "Stacks — sBTC",
       "url": "https://stacks.co",
-      "blockchain": "Stacks / Bitcoin L2",
-      "type": "Bitcoin L2 / PoX",
-      "mechanism": "sBTC 1:1 multisig signers STX stackers",
-      "mechanism_note": "Signers retienen BTC 1:1; recompensas pagadas en Bitcoin",
+      "blockchain": "Stacks (Bitcoin L2)",
+      "category": "Bitcoin L2 / PoX",
+      "mechanism": "sBTC 1:1 multisig — signers STX stackers",
+      "mechanism_note": "Signers retienen BTC 1:1; recompensas pagadas en Bitcoin real cada 2 semanas.",
       "apy_base": 5.0,
-      "apy_note": "~5% base (puede llegar a 30% con boosts)",
       "apy_display": "~5%",
-      "tvl_btc": null,
+      "apy_note": "~5% base, hasta 30% con boosts en Bitflow/Zest",
       "tvl_usd": null,
+      "tvl_btc": null,
       "tvl_display": "En expansión (sBTC growing)",
       "risk": "med_low",
       "risk_label": "Bajo-Medio",
-      "audit": "Clarity language audits; sBTC bridge en auditoría activa",
       "custody": "Non-custodial (multisig signer set)",
+      "audit": "Clarity audits + sBTC bridge en auditoría activa",
       "factors": {
-        "positive": ["Recompensas pagadas en BTC real — no token", "PoX consensus anclado a Bitcoin (finalidad hereda BTC)", "Ecosistema growing con múltiples dApps"],
-        "negative": ["Riesgo multisig signer set — confianza en STX stackers", "sBTC relativamente nuevo", "ALEX Lab exploit $8.3M (jun 2025) afecta credibilidad ecosistema Stacks"]
-      }
-    },
-    {
-      "id": "morpho-btc",
-      "rank": 5,
-      "name": "Morpho — BTC Markets",
-      "url": "https://morpho.org",
-      "blockchain": "Ethereum",
-      "type": "Lending optimizado",
-      "mechanism": "Curators rebalancean markets sobre Aave/Compound para maximizar APY",
-      "mechanism_note": "Mejor APY que Aave base por optimización de liquidity routing",
-      "apy_base": 5.5,
-      "apy_note": "3–8% (variable según market)",
-      "apy_display": "3–8%",
-      "tvl_btc": null,
-      "tvl_usd": 1500000000,
-      "tvl_display": "$1.5B+",
-      "risk": "low",
-      "risk_label": "Bajo",
-      "audit": "Formal verification con Certora; audits Trail of Bits, OpenZeppelin",
-      "custody": "Custodial (bridge wBTC/tBTC)",
-      "factors": {
-        "positive": ["Superior APY vs Aave base rates (curators optimizan)", "Auditorías formales (Certora)", "Blue-chipDeFi con TVL creciente"],
-        "negative": ["Bridge risk (wBTC/tBTC) sigue presente", "Mercados BTC menos profundos que USDC/USDT"]
-      }
-    },
-    {
-      "id": "spark-usdb",
-      "rank": 6,
-      "name": "Spark — USDB + BTC Rewards",
-      "url": "https://spark.money",
-      "blockchain": "Bitcoin / Ethereum",
-      "type": "Stablecoin + BTC Yield",
-      "mechanism": "USDB respaldado 1:1 por U.S. Treasuries + recompensas en BTC",
-      "mechanism_note": "USDB stablecoin de Brale (entidad regulada EE.UU.) + yield en BTC",
-      "apy_base": 6.0,
-      "apy_note": "Hasta ~6% (pagado diariamente en BTC)",
-      "apy_display": "~6%",
-      "tvl_btc": null,
-      "tvl_usd": null,
-      "tvl_display": "En crecimiento",
-      "risk": "med_low",
-      "risk_label": "Bajo-Medio",
-      "audit": "Auditorías en curso (Brale entidad regulada)",
-      "custody": "Semi-custodial (respaldado por T-Bills)",
-      "factors": {
-        "positive": ["Respaldado por U.S. Treasuries (no algorithmic)", "Entidad regulada (Brale) — transparencia institucional", "Recompensas pagadas en BTC diariamente"],
-        "negative": ["Centrado en stablecoin — no BTC nativo en el producto", "TVL no信息公开 (proyecto en crecimiento)"]
+        "positive": [
+          "Recompensas en BTC real, no token",
+          "PoX anchored to Bitcoin",
+          "Ecosistema growing con dApps"
+        ],
+        "negative": [
+          "Riesgo multisig signer set",
+          "ALEX Lab exploit $8.3M (jun-2025) golpeó credibilidad"
+        ]
       }
     },
     {
       "id": "bitlayer",
-      "rank": 7,
+      "rank": 4,
       "name": "Bitlayer",
       "url": "https://bitlayer.org",
       "blockchain": "Bitcoin L2 (BitVM)",
-      "type": "BitVM Optimistic Rollup L2",
-      "mechanism": "BLBTC via DeSyn Protocol — BTC yield en L2 BitVM",
-      "mechanism_note": "BitVM optimistic rollup; BTC se mueve a bridge L2 para yield DeFi",
+      "category": "BitVM Optimistic Rollup",
+      "mechanism": "BLBTC via DeSyn Protocol — YBTC yield",
+      "mechanism_note": "BitVM optimistic rollup; BTC se mueve a bridge L2 para DeFi yield.",
       "apy_base": 20.0,
-      "apy_note": "Hasta ~20% (YBTC/DeSyn Phase 1)",
       "apy_display": "~20%",
-      "tvl_btc": null,
+      "apy_note": "Hasta ~20% en YBTC/DeSyn Phase 1",
       "tvl_usd": 750000000,
-      "tvl_display": "$650–850M (peak $850M)",
+      "tvl_btc": null,
+      "tvl_display": "$650-850M (peak $850M)",
       "risk": "med",
       "risk_label": "Medio",
-      "audit": "Auditorías limitadas (proyecto muy nuevo)",
       "custody": "Semi-custodial (bridge L2)",
+      "audit": "Auditorías limitadas (proyecto <2 años mainnet)",
       "factors": {
-        "positive": ["BitVM paradigm — innovación técnica real", "+200 protocolos en ecosistema", "Top 3 Bitcoin L2 TVL", "Mainnet V2 lanzada Q2 2025 con soporte completo"],
-        "negative": ["Proyecto < 2 años mainnet — smart contracts nuevos", "Bridge L2 requerido para yield (BTC sale del control directo)", "TVL retraido ~$850M peak a $650M actual", "KYC en retiros en algunos productos DeSyn"]
-      }
-    },
-    {
-      "id": "eigenlayer-btc",
-      "rank": 8,
-      "name": "EigenLayer — BTC Restaking",
-      "url": "https://eigenlayer.xyz",
-      "blockchain": "Ethereum",
-      "type": "Restaking",
-      "mechanism": "tBTC / wBTC restaking — activa AVS (Actively Validated Services)",
-      "mechanism_note": "Restaking sobre ETH líquido ya stakeado; yield de fees de AVS",
-      "apy_base": 4.5,
-      "apy_note": "4–5% (sobre LST yield base)",
-      "apy_display": "4–5%",
-      "tvl_btc": null,
-      "tvl_usd": 15000000000,
-      "tvl_display": "$15B+ (protocolo total)",
-      "risk": "med_low",
-      "risk_label": "Bajo-Medio",
-      "audit": "Auditado por múltiples firms; Sigma Prime, Trail of Bits",
-      "custody": "Custodial (tBTC bridge)",
-      "factors": {
-        "positive": ["TVL masivo ($15B+) — el mayor protocolo restaking", "Sload theme/top-tier adoption (institucional)", "Redundancia de seguridad por AVS"],
-        "negative": ["Custodial — depende de tBTC bridge", "Slashing risk si AVS falla o mal comportamiento", "Complejidad de slashing mechanics — riesgo no trivial para holders"]
-      }
-    },
-    {
-      "id": "zest",
-      "rank": 9,
-      "name": "Zest Protocol",
-      "url": "https://zestprotocol.io",
-      "blockchain": "Stacks / Bitcoin L2",
-      "type": "Pooled BTC Lending",
-      "mechanism": "sBTC pooled lending — Clarity smart contracts sobre Stacks",
-      "mechanism_note": "Base ~5% + bonus hasta 7.5% por uso de plataforma",
-      "apy_base": 12.5,
-      "apy_note": "~5% base + hasta 7.5% bonus",
-      "apy_display": "~12.5%",
-      "tvl_btc": null,
-      "tvl_usd": null,
-      "tvl_display": "En desarrollo (growing)",
-      "risk": "med",
-      "risk_label": "Medio",
-      "audit": "Smart contract audits en curso",
-      "custody": "Non-custodial ( Clarity contracts)",
-      "factors": {
-        "positive": ["Smart contracts en Clarity (lenguaje funcional, verificable)", "12.5% APY competitivo para Bitcoin L2", "Composabilidad con ecosistema Stacks"],
-        "negative": ["Dependencia directa de sBTC bridge stability", "TVL bajo vs. protocolos maduros (exposición a low-liquidity risk)", "Hereda risk profile de Stacks — exploits en ecosistema"]
-      }
-    },
-    {
-      "id": "velar",
-      "rank": 10,
-      "name": "Velar",
-      "url": "https://velar.io",
-      "blockchain": "Stacks / Bitcoin L2",
-      "type": "Perpetual DEX + LP",
-      "mechanism": "sBTC LP pools + perpetual fees — hasta 20x leverage",
-      "mechanism_note": "Primer perp DEX Bitcoin-native; LP fees + token incentives",
-      "apy_base": 15.0,
-      "apy_note": "Hasta ~15% + token rewards",
-      "apy_display": "~15%",
-      "tvl_btc": null,
-      "tvl_usd": null,
-      "tvl_display": "Testnet → Mainnet (150K+ testnet users)",
-      "risk": "med",
-      "risk_label": "Medio",
-      "audit": "Auditorías limitadas (mainnet reciente)",
-      "custody": "Non-custodial ( smart contracts Stacks)",
-      "factors": {
-        "positive": ["Primer perpetual DEX Bitcoin-native (innovación real)", "150K+ usuarios testnet — comunidad activa", "Hasta 20x leverage para traders"],
-        "negative": ["Mainnet aún no madura — TVL real mínimo", "DeFi activity concentrado en LPs con reward token (sustainability questionable)", "Exploit ALEX Lab ($8.3M) golpea credibilidad ecosistema Stacks completo"]
-      }
-    },
-    {
-      "id": "liquidium",
-      "rank": 11,
-      "name": "Liquidium",
-      "url": "https://liquidium.io",
-      "blockchain": "Bitcoin L1",
-      "type": "P2P Lending (DLCs)",
-      "mechanism": "DLCs + PSBTs — peer-to-peer sin bridge",
-      "mechanism_note": "P2P loans con collaterals Ordinals/Runes/BRC-20; 75K+ loans procesados",
-      "apy_base": null,
-      "apy_note": "Variable según mercado P2P",
-      "apy_display": "Variable",
-      "tvl_btc": null,
-      "tvl_usd": null,
-      "tvl_display": "$360M+ volumen / 75K+ loans",
-      "risk": "med_low",
-      "risk_label": "Bajo-Medio",
-      "audit": "Open-source; no信息公开 de audits formales",
-      "custody": "Non-custodial (DLCs — trustless P2P)",
-      "factors": {
-        "positive": ["Trustless P2P real — sin bridge/wrap/wrapper de ningún tipo", "Sin exposición a smart contract de protocolo", "$6.3M intereses en BTC pagados a lenders (track record real)", "75K+ loans procesados — producto validado"],
-        "negative": ["Collateral crypto volátil (Ordinals/Runes/BRC-20) — riesgo para el lender", "Mercado P2P = menor liquidez que pooled lending", "Sin audits públicos formales"]
-      }
-    },
-    {
-      "id": "pendle-btc",
-      "rank": 12,
-      "name": "Pendle — uniBTC / SolvBTC",
-      "url": "https://pendle.xyz",
-      "blockchain": "Ethereum / Multi-chain",
-      "type": "Yield Trading",
-      "mechanism": "PT/YT yield tokens — principle + yield token split sobre BTC wrapped",
-      "mechanism_note": "Trading de yields estructurados; deep liquidity en Pendle markets",
-      "apy_base": 3.0,
-      "apy_note": "1–5% según tenor y mercado",
-      "apy_display": "1–5%",
-      "tvl_btc": null,
-      "tvl_usd": 500000000,
-      "tvl_display": "$500M+",
-      "risk": "med_low",
-      "risk_label": "Bajo-Medio",
-      "audit": "Múltiples audits; Protocolu re-auditado post-exploits",
-      "custody": "Custodial ( bridge uniBTC/SolvBTC)",
-      "factors": {
-        "positive": ["Deep liquidity en Pendle markets (mature AMM)", "Exposición a yield estructurado (diferentes tenors)", "Mercados maduros con slippage bajo"],
-        "negative": ["Bridge risk (uniBTC/SolvBTC) — smart contract dependency", "Exposición a Pendle smart contract risk (tuvo exploits historically)"]
+        "positive": [
+          "BitVM paradigm — innovación real",
+          "+200 protocolos en ecosistema",
+          "Top 3 Bitcoin L2 TVL"
+        ],
+        "negative": [
+          "Mainnet <2 años — smart contracts nuevos",
+          "Bridge L2 requerido (BTC sale del control directo)",
+          "TVL retraído de peak $850M a $650M"
+        ]
       }
     },
     {
       "id": "sovryn",
-      "rank": 13,
+      "rank": 5,
       "name": "Sovryn",
       "url": "https://sovryn.com",
       "blockchain": "Rootstock (RSK)",
-      "type": "DeFi (Lending + AMM)",
-      "mechanism": "RBTC via PoW-peg a RSK sidechain — lending + AMM + SOV staking",
-      "mechanism_note": "RBTC se crea mediante 2-way pegging PoW; governance via SOV DAO",
+      "category": "DeFi — Lending + AMM",
+      "mechanism": "RBTC via PoW peg — 2-way peg a RSK",
+      "mechanism_note": "RBTC se crea con PoW peg mechanism. Lending + AMM + SOV DAO governance.",
       "apy_base": 0.29,
-      "apy_note": "~0.29% (lending RBTC)",
       "apy_display": "0.29%",
-      "tvl_btc": 103,
+      "apy_note": "~0.29% (lending RBTC), hasta 5%+ en pools",
       "tvl_usd": 11000000,
-      "tvl_display": "~103 BTC (~$11M)",
+      "tvl_btc": 103,
+      "tvl_display": "~$11M (103 BTC)",
       "risk": "med",
       "risk_label": "Medio",
-      "audit": "Immunefi bug bounty hasta $1M; auditsvoluntarios",
-      "custody": "Non-custodial (RSK peg mechanism)",
+      "custody": "Non-custodial (RSK peg)",
+      "audit": "Immunefi bug bounty hasta $1M",
       "factors": {
-        "positive": ["No-custodial via RSK peg (RBTC nunca deja Bitcoin)", "Immunefi bug bounty hasta $1M (incentivo a researchers)", "DAO governance via SOV token — transparencia"],
-        "negative": ["TVL muy bajo ($11M) — liquidez fragmentada", "RSK merge mining = 3-4 pools controlan ~75% del hashrate RSK", "RBTC bridge dependency — concentración de minería"]
+        "positive": [
+          "No-custodial via RSK peg",
+          "Bug bounty $1M — Incentivo a researchers",
+          "DAO governance via SOV"
+        ],
+        "negative": [
+          "TVL muy bajo ($11M)",
+          "RSK merge mining: 3-4 pools ~75% hashrate",
+          "RBTC bridge dependency"
+        ]
+      }
+    },
+    {
+      "id": "botanix",
+      "rank": 6,
+      "name": "Botanix",
+      "url": "https://botanixlabs.org",
+      "blockchain": "Bitcoin L2 (EVM)",
+      "category": "EVM L2 sobre Bitcoin",
+      "mechanism": "Proof-of-Stake EVM L2 anclado a Bitcoin",
+      "mechanism_note": "EVM chain sobre Bitcoin como Layer 2. Smart contracts Solidity sobre Bitcoin security.",
+      "apy_base": 8.0,
+      "apy_display": "~8%",
+      "apy_note": "~8% estimado (launch reciente)",
+      "tvl_usd": 50000000,
+      "tvl_btc": null,
+      "tvl_display": "$50M+ (launching Q1 2025)",
+      "risk": "med",
+      "risk_label": "Medio",
+      "custody": "Semi-custodial",
+      "audit": "Auditorías en curso",
+      "factors": {
+        "positive": [
+          "EVM compatible — fácil porting de Ethereum DeFi",
+          "Anclado a Bitcoin PoW",
+          "Nuevo paradigma L2"
+        ],
+        "negative": [
+          "Proyecto muy nuevo (<1 año mainnet)",
+          "TVL aún bajo",
+          "Riesgo de centralización en sequencer"
+        ]
+      }
+    },
+    {
+      "id": "citrea",
+      "rank": 7,
+      "name": "Citrea",
+      "url": "https://citrea.xyz",
+      "blockchain": "Bitcoin L2 (ZK Rollup)",
+      "category": "ZK Rollup sobre Bitcoin",
+      "mechanism": "ZK validity proofs sobre Bitcoin",
+      "mechanism_note": "ZK rollup con proofs publicados en Bitcoin L1. Máxima security para L2.",
+      "apy_base": 6.0,
+      "apy_display": "~6%",
+      "apy_note": "~6% estimado (datos de pre-mainnet)",
+      "tvl_usd": 30000000,
+      "tvl_btc": null,
+      "tvl_display": "$30M+ (pre-mainnet)",
+      "risk": "med",
+      "risk_label": "Medio",
+      "custody": "Semi-custodial",
+      "audit": "ZK audits por Spearbit",
+      "factors": {
+        "positive": [
+          "ZK validity proofs = máxima seguridad",
+          "Direct inheritance de Bitcoin L1 security",
+          "ZK rollup = scalable + trustless"
+        ],
+        "negative": [
+          "Pre-mainnet — datos limitados",
+          "TVL incipiente",
+          "Riesgo de centralización en prover"
+        ]
+      }
+    },
+    {
+      "id": "aave-btc",
+      "rank": 8,
+      "name": "Aave — wBTC / tBTC",
+      "url": "https://aave.com",
+      "blockchain": "Ethereum",
+      "category": "Lending",
+      "mechanism": "Wrapped BTC (wBTC / tBTC) en Aave v3",
+      "mechanism_note": "Mercados de collateral wBTC y tBTC. Interest variable según demanda.",
+      "apy_base": 3.5,
+      "apy_display": "2-5%",
+      "apy_note": "Variable — 2-5% según market y demanda",
+      "tvl_usd": 25000000000,
+      "tvl_btc": null,
+      "tvl_display": "$25B+ (protocolo total)",
+      "risk": "low",
+      "risk_label": "Bajo",
+      "custody": "Custodial (bridge wBTC/tBTC)",
+      "audit": "Trail of Bits, OpenZeppelin, Sigma Prime",
+      "factors": {
+        "positive": [
+          "7+ años sin exploits majeurs",
+          "$25B+ TVL — el más grande DeFi",
+          "Bug bounty activo + múltiples audits"
+        ],
+        "negative": [
+          "Dependencia wBTC/tBTC bridge",
+          "Exposición a ETH fees"
+        ]
+      }
+    },
+    {
+      "id": "morpho-btc",
+      "rank": 9,
+      "name": "Morpho — BTC Markets",
+      "url": "https://morpho.org",
+      "blockchain": "Ethereum",
+      "category": "Lending optimizado",
+      "mechanism": "Curators rebalancean markets sobre Aave/Compound",
+      "mechanism_note": "Mejor APY que Aave base por optimización de liquidity routing. Formal verification Certora.",
+      "apy_base": 5.5,
+      "apy_display": "3-8%",
+      "apy_note": "3-8% variable según market",
+      "tvl_usd": 1500000000,
+      "tvl_btc": null,
+      "tvl_display": "$1.5B+",
+      "risk": "low",
+      "risk_label": "Bajo",
+      "custody": "Custodial (bridge wBTC/tBTC)",
+      "audit": "Formal verification Certora; Trail of Bits, OpenZeppelin",
+      "factors": {
+        "positive": [
+          "Superior APY vs Aave base",
+          "Formal verification (Certora)",
+          "Blue-chip DeFi"
+        ],
+        "negative": [
+          "Bridge risk wBTC/tBTC persiste"
+        ]
+      }
+    },
+    {
+      "id": "compound-btc",
+      "rank": 10,
+      "name": "Compound — wBTC",
+      "url": "https://compound.finance",
+      "blockchain": "Ethereum",
+      "category": "Lending",
+      "mechanism": "Mercado de lending wBTC en Compound v3",
+      "mechanism_note": "Pool de lending con interés variable. Uno de los primeros protocolos DeFi.",
+      "apy_base": 2.0,
+      "apy_display": "1-3%",
+      "apy_note": "Variable 1-3% según demanda",
+      "tvl_usd": 500000000,
+      "tvl_btc": null,
+      "tvl_display": "$500M+ (compound total ~$2B)",
+      "risk": "low",
+      "risk_label": "Bajo",
+      "custody": "Custodial (bridge wBTC)",
+      "audit": "OpenZeppelin + múltiples audits",
+      "factors": {
+        "positive": [
+          "Pionero DeFi — 7+ años track record",
+          "Simple, battle-tested contracts",
+          "Governance COMP"
+        ],
+        "negative": [
+          "APY lower que Morpho/Aave",
+          "wBTC bridge risk"
+        ]
+      }
+    },
+    {
+      "id": "euler-btc",
+      "rank": 11,
+      "name": "Euler",
+      "url": "https://euler.finance",
+      "blockchain": "Ethereum",
+      "category": "Lending",
+      "mechanism": "Lending sin许可 con isolation mode",
+      "mechanism_note": "Protocolo de lending con mercados uncollateralized y cross. Hackeado en 2023 ($200M), recuperó fondos.",
+      "apy_base": 3.0,
+      "apy_display": "1-5%",
+      "apy_note": "1-5% según mercado",
+      "tvl_usd": 100000000,
+      "tvl_btc": null,
+      "tvl_display": "$100M+ (post-hack recovery)",
+      "risk": "med",
+      "risk_label": "Medio",
+      "custody": "Custodial (wBTC)",
+      "audit": "Post-hack re-auditado por Spearbit",
+      "factors": {
+        "positive": [
+          "Uncollateralized lending disponible",
+          "Post-hack: todos los fondos recuperados",
+          "Innovador en interest rate models"
+        ],
+        "negative": [
+          "Hack previo ($200M exploit 2023)",
+          "TVL reducido post-hack",
+          "wBTC bridge risk"
+        ]
+      }
+    },
+    {
+      "id": "gearbox-btc",
+      "rank": 12,
+      "name": "Gearbox",
+      "url": "https://gearbox.finance",
+      "blockchain": "Ethereum",
+      "category": "Leverage / Credit",
+      "mechanism": "Credit accounts — hasta 10x leverage sobre wBTC",
+      "mechanism_note": "Composable leverage. Pool de crédito para posiciones apalancadas.",
+      "apy_base": 4.0,
+      "apy_display": "2-6%",
+      "apy_note": "2-6% para lenders (variable)",
+      "tvl_usd": 150000000,
+      "tvl_btc": null,
+      "tvl_display": "$150M+",
+      "risk": "med",
+      "risk_label": "Medio",
+      "custody": "Custodial (wBTC)",
+      "audit": "Trail of Bits, OpenZeppelin audits",
+      "factors": {
+        "positive": [
+          "Leverage composable — estrategias avanzadas",
+          "Trail of Bits audit",
+          "TVL growing"
+        ],
+        "negative": [
+          "Complex smart contracts = mayor surface area",
+          "wBTC bridge risk",
+          "Margin calls = riesgo de liquidación"
+        ]
+      }
+    },
+    {
+      "id": "cream-btc",
+      "rank": 13,
+      "name": "Cream Finance",
+      "url": "https://creamfinance.io",
+      "blockchain": "Ethereum",
+      "category": "Lending",
+      "mechanism": "Lending markets con wBTC collateral",
+      "mechanism_note": "Cream es un protocolo de lending con markets island-aisland. Múltiples hacks historically.",
+      "apy_base": 2.5,
+      "apy_display": "1-4%",
+      "apy_note": "1-4% variable",
+      "tvl_usd": 50000000,
+      "tvl_btc": null,
+      "tvl_display": "$50M+ (post-hacks)",
+      "risk": "high",
+      "risk_label": "Alto",
+      "custody": "Custodial",
+      "audit": "Re-auditado post-hacks",
+      "factors": {
+        "positive": [
+          "Amplio rango de collaterals",
+          "Reputación reconocida"
+        ],
+        "negative": [
+          "Múltiples hacks (2021 $130M, 2022 $16M)",
+          "TVL significativamente reducido",
+          "Trust erosion post-hacks"
+        ]
+      }
+    },
+    {
+      "id": "yearn-btc",
+      "rank": 14,
+      "name": "Yearn Finance — wBTC vault",
+      "url": "https://yearn.finance",
+      "blockchain": "Ethereum",
+      "category": "Yield Aggregator",
+      "mechanism": "Vault estrategias automatizadas sobre Aave/Compound/Curve",
+      "mechanism_note": "Vaults con estrategias optimizadas por yield farming. Auto-compounding.",
+      "apy_base": 4.0,
+      "apy_display": "2-6%",
+      "apy_note": "2-6% (variable según estrategia activa)",
+      "tvl_usd": 600000000,
+      "tvl_btc": null,
+      "tvl_display": "$600M+ (yearn total ~$1B)",
+      "risk": "med_low",
+      "risk_label": "Bajo-Medio",
+      "custody": "Custodial",
+      "audit": "Trail of Bits, OpenZeppelin, múltiples audits",
+      "factors": {
+        "positive": [
+          "Auto-optimized strategies",
+          "Battle-tested vault architecture",
+          "$1B+ TVL histórico"
+        ],
+        "negative": [
+          "Estrategias complejas = black box para users",
+          "wBTC bridge risk",
+          "Fee extraction (20% performance fee)"
+        ]
+      }
+    },
+    {
+      "id": "beefy-btc",
+      "rank": 15,
+      "name": "Beefy Finance",
+      "url": "https://beefy.finance",
+      "blockchain": "Multi-chain",
+      "category": "Yield Aggregator",
+      "mechanism": "Vaults multi-chain con auto-harvesting",
+      "mechanism_note": "Vaults en 60+ cadenas. Optimiza yield en pools de liquidity.",
+      "apy_base": 4.5,
+      "apy_display": "2-8%",
+      "apy_note": "2-8% según chain y pool",
+      "tvl_usd": 300000000,
+      "tvl_btc": null,
+      "tvl_display": "$300M+ multi-chain",
+      "risk": "med_low",
+      "risk_label": "Bajo-Medio",
+      "custody": "Custodial",
+      "audit": "Multi-audits en diferentes chains",
+      "factors": {
+        "positive": [
+          "Multi-chain coverage",
+          "Vaults en Polygon, BSC, Fantom, etc.",
+          "Auto-harvesting reduce gas costs"
+        ],
+        "negative": [
+          "Cross-chain = mayor exposición",
+          "wBTC bridge risk",
+          "Vault strategies variable quality"
+        ]
+      }
+    },
+    {
+      "id": "pendle-btc",
+      "rank": 16,
+      "name": "Pendle — BTC Yield",
+      "url": "https://pendle.xyz",
+      "blockchain": "Ethereum",
+      "category": "Yield Trading / Structured",
+      "mechanism": "PT/YT split — Principle + Yield tokens",
+      "mechanism_note": "Tokeniza yield futuro. Puedes comprar PT (principal) con descuento o vender YT (yield).",
+      "apy_base": 3.0,
+      "apy_display": "1-5%",
+      "apy_note": "1-5% según tenor y mercado",
+      "tvl_usd": 500000000,
+      "tvl_btc": null,
+      "tvl_display": "$500M+",
+      "risk": "med_low",
+      "risk_label": "Bajo-Medio",
+      "custody": "Custodial",
+      "audit": "Múltiples audits post-exploits 2024",
+      "factors": {
+        "positive": [
+          "Deep liquidity en markets Pendle",
+          "Exposición a yield estructurado",
+          "Mercados maduros con slippage bajo"
+        ],
+        "negative": [
+          "Bridge risk (uniBTC/SolvBTC)",
+          "Tuvo exploits en 2024",
+          "Exposición a smart contracts Pendle"
+        ]
+      }
+    },
+    {
+      "id": "element-btc",
+      "rank": 17,
+      "name": "Element Finance",
+      "url": "https://elementdefi.com",
+      "blockchain": "Ethereum",
+      "category": "Yield / Structured",
+      "mechanism": "Principal tokens con yield fijo descontado",
+      "mechanism_note": "Fija yield hoy, recibe principal mañana con descuento.",
+      "apy_base": 3.5,
+      "apy_display": "2-5%",
+      "apy_note": "2-5% según maturity y principal",
+      "tvl_usd": 50000000,
+      "tvl_btc": null,
+      "tvl_display": "$50M+",
+      "risk": "med_low",
+      "risk_label": "Bajo-Medio",
+      "custody": "Custodial",
+      "audit": "OpenZeppelin audits",
+      "factors": {
+        "positive": [
+          "Yield fijo predecible",
+          "Descontado principal = asymmetric trade"
+        ],
+        "negative": [
+          "TVL bajo vs Pendle",
+          "Smart contract risk del protocolo",
+          "wBTC bridge risk"
+        ]
+      }
+    },
+    {
+      "id": "solvbtc",
+      "rank": 18,
+      "name": "SolvBTC / Solv Protocol",
+      "url": "https://solv.io",
+      "blockchain": "Multi-chain (ETH, BSC, etc.)",
+      "category": "Yield Tokenization / LSD",
+      "mechanism": "SolvBTC — tokeniza BTC yield de validators o DeFi",
+      "mechanism_note": "SolvBTC es un wrapped Bitcoin con yield integrado de staking o DeFi strategies.",
+      "apy_base": 5.0,
+      "apy_display": "3-7%",
+      "apy_note": "3-7% según versión (SolvBTC, SolvBTC.v2)",
+      "tvl_usd": 200000000,
+      "tvl_btc": null,
+      "tvl_display": "$200M+",
+      "risk": "med_low",
+      "risk_label": "Bajo-Medio",
+      "custody": "Semi-custodial",
+      "audit": "Auditorías en curso",
+      "factors": {
+        "positive": [
+          "Yield de múltiples fuentes (staking + DeFi)",
+          "Multi-chain deployment",
+          "Liquid — permite trading"
+        ],
+        "negative": [
+          "Nuevo (~2 años)",
+          "Custodia parcial",
+          "Complejidad en validation de yields"
+        ]
+      }
+    },
+    {
+      "id": "stbtc",
+      "rank": 19,
+      "name": "stBTC (pSTAKE)",
+      "url": "https://pstake.finance",
+      "blockchain": "Ethereum",
+      "category": "LSD — Liquid Staking Derivative",
+      "mechanism": "Liquid staking derivative de Bitcoin",
+      "mechanism_note": "pSTAKE liquid staking para BTC. Recibe stBTC que puedes usar en DeFi mientras el underlying está stakeado.",
+      "apy_base": 4.5,
+      "apy_display": "3-6%",
+      "apy_note": "3-6% (staking yield + additional DeFi)",
+      "tvl_usd": 100000000,
+      "tvl_btc": null,
+      "tvl_display": "$100M+",
+      "risk": "med_low",
+      "risk_label": "Bajo-Medio",
+      "custody": "Semi-custodial",
+      "audit": "Audited by Oak Security",
+      "factors": {
+        "positive": [
+          "Liquid staking = no lock-up",
+          "Stake + DeFi simultaneously",
+          "TVL significativo"
+        ],
+        "negative": [
+          "Dependency on pSTAKE validator",
+          "Bridge risk moderado",
+          "Relativamente nuevo"
+        ]
+      }
+    },
+    {
+      "id": "eigenlayer-btc",
+      "rank": 20,
+      "name": "EigenLayer — BTC Restaking",
+      "url": "https://eigenlayer.xyz",
+      "blockchain": "Ethereum",
+      "category": "Restaking",
+      "mechanism": "Restaking tBTC / wBTC — activa AVS",
+      "mechanism_note": "Restaking sobre LST/ETH já stakeado. Yield de fees de AVS validators.",
+      "apy_base": 4.5,
+      "apy_display": "4-5%",
+      "apy_note": "4-5% sobre LST yield base",
+      "tvl_usd": 15000000000,
+      "tvl_btc": null,
+      "tvl_display": "$15B+ (protocolo total)",
+      "risk": "med_low",
+      "risk_label": "Bajo-Medio",
+      "custody": "Custodial (tBTC bridge)",
+      "audit": "Sigma Prime, Trail of Bits",
+      "factors": {
+        "positive": [
+          "$15B+ TVL — masivo",
+          "Top-tier institutional adoption",
+          "Redundancia de seguridad por AVS"
+        ],
+        "negative": [
+          "Custodial — depende de tBTC bridge",
+          "Slashing risk si AVS falla",
+          "Complex slashing mechanics"
+        ]
+      }
+    },
+    {
+      "id": "curve-btc",
+      "rank": 21,
+      "name": "Curve — wBTC / BTC pools",
+      "url": "https://curve.fi",
+      "blockchain": "Ethereum",
+      "category": "DEX / Stablecoin AMM",
+      "mechanism": "AMM stableswap para wrapped BTC pools",
+      "mechanism_note": "Pools de liquidity wBTC en Curve (stableswap). Baja slippage para stablecoins y assets pegged.",
+      "apy_base": 2.0,
+      "apy_display": "1-4%",
+      "apy_note": "1-4% en pools BTC (CRV + trading fees)",
+      "tvl_usd": 2000000000,
+      "tvl_btc": null,
+      "tvl_display": "$2B+ en pools Curve",
+      "risk": "low",
+      "risk_label": "Bajo",
+      "custody": "Custodial (LP tokens)",
+      "audit": "Trail of Bits + múltiples audits",
+      "factors": {
+        "positive": [
+          "TVL masivo — deep liquidity",
+          "Battle-tested AMM desde 2020",
+          "Low slippage para BTC pools"
+        ],
+        "negative": [
+          "Exposición a CRV token volatility",
+          "wBTC bridge risk",
+          "Impermanent loss risk en volatility pools"
+        ]
+      }
+    },
+    {
+      "id": "uniswap-btc",
+      "rank": 22,
+      "name": "Uniswap — wBTC pools",
+      "url": "https://uniswap.org",
+      "blockchain": "Ethereum",
+      "category": "DEX",
+      "mechanism": "AMM con pools wBTC/ETH y wBTC/USDT",
+      "mechanism_note": "Pools de liquidity V3 con wBTC. Range orders permiten集中流动性。",
+      "apy_base": 2.5,
+      "apy_display": "1-5%",
+      "apy_note": "1-5% (LP fees + trading volume)",
+      "tvl_usd": 1000000000,
+      "tvl_btc": null,
+      "tvl_display": "$1B+ en pools wBTC Uniswap",
+      "risk": "low",
+      "risk_label": "Bajo",
+      "custody": "Custodial (LP tokens)",
+      "audit": "OpenZeppelin + múltiples audits",
+      "factors": {
+        "positive": [
+          "Líder absoluto en DEX volume",
+          "V3 range orders = capital efficient",
+          "Battle-tested contracts"
+        ],
+        "negative": [
+          "Impermanent loss risk",
+          "wBTC bridge risk",
+          "Gas costs en Ethereum L1"
+        ]
+      }
+    },
+    {
+      "id": "velar",
+      "rank": 23,
+      "name": "Velar",
+      "url": "https://velar.io",
+      "blockchain": "Stacks (Bitcoin L2)",
+      "category": "Perpetual DEX + LP",
+      "mechanism": "sBTC LP pools + perpetual futures hasta 20x",
+      "mechanism_note": "Primer perpetual DEX Bitcoin-native. Traders pueden ir long/short con hasta 20x leverage.",
+      "apy_base": 15.0,
+      "apy_display": "~15%",
+      "apy_note": "~15% + token rewards para LPs",
+      "tvl_usd": null,
+      "tvl_btc": null,
+      "tvl_display": "Testnet -> Mainnet (150K+ testnet users)",
+      "risk": "med",
+      "risk_label": "Medio",
+      "custody": "Non-custodial (smart contracts Stacks)",
+      "audit": "Auditorías limitadas (mainnet reciente)",
+      "factors": {
+        "positive": [
+          "Primer perp DEX Bitcoin-native",
+          "150K+ usuarios testnet",
+          "20x leverage para traders"
+        ],
+        "negative": [
+          "Mainnet no madura",
+          "ALEX exploit golpea credibilidad ecosistema Stacks",
+          "Token incentives = sustainability questionable"
+        ]
+      }
+    },
+    {
+      "id": "alex-btc",
+      "rank": 24,
+      "name": "ALEX Lab",
+      "url": "https://alexlab.co",
+      "blockchain": "Stacks (Bitcoin L2)",
+      "category": "DEX / DeFi",
+      "mechanism": "AMM + borrowing sobre sBTC y tokens Stacks",
+      "mechanism_note": "Fue el DEX más grande de Stacks hasta el exploit de junio 2025.",
+      "apy_base": 5.0,
+      "apy_display": "3-8%",
+      "apy_note": "3-8% (LP + token incentives)",
+      "tvl_usd": 8000000,
+      "tvl_btc": null,
+      "tvl_display": "$8M (post-exploit, recovering)",
+      "risk": "high",
+      "risk_label": "Alto",
+      "custody": "Non-custodial (smart contracts)",
+      "audit": "Post-exploit re-audit",
+      "factors": {
+        "positive": [
+          "First-mover en Stacks DeFi",
+          "Recovering post-exploit",
+          "LBTC integration"
+        ],
+        "negative": [
+          "$8.3M exploit junio 2025",
+          "Trust erosion significativa",
+          "TVL 99%+ retraído post-attack"
+        ]
+      }
+    },
+    {
+      "id": "liquidium",
+      "rank": 25,
+      "name": "Liquidium",
+      "url": "https://liquidium.io",
+      "blockchain": "Bitcoin L1 (DLCs)",
+      "category": "P2P Lending (DLCs)",
+      "mechanism": "DLCs + PSBTs — peer-to-peer sin bridge",
+      "mechanism_note": "P2P loans sin bridge. Collaterals Ordinals/Runes/BRC-20. 75K+ loans procesados.",
+      "apy_base": null,
+      "apy_display": "Variable",
+      "apy_note": "Variable según mercado P2P",
+      "tvl_usd": null,
+      "tvl_btc": null,
+      "tvl_display": "$360M+ volumen / 75K+ loans",
+      "risk": "med_low",
+      "risk_label": "Bajo-Medio",
+      "custody": "Non-custodial (DLCs trustless)",
+      "audit": "Open-source, no audits públicos formales",
+      "factors": {
+        "positive": [
+          "Trustless P2P sin bridge/wrap",
+          "75K+ loans procesados = producto validado",
+          "$6.3M intereses BTC pagados a lenders"
+        ],
+        "negative": [
+          "Colateral crypto volátil (Ordinals/Runes)",
+          "Mercado P2P = menor liquidez",
+          "No audits formales públicos"
+        ]
+      }
+    },
+    {
+      "id": "lava",
+      "rank": 26,
+      "name": "Lava",
+      "url": "https://lavaproTOCOL.io",
+      "blockchain": "Ethereum (custodial pivot)",
+      "category": "Credit Lines",
+      "mechanism": "BTC-collateralized credit lines — pivotó a custodial",
+      "mechanism_note": "Crédito revolving con BTC como colateral. Pivoteó a modelo custodial en 2024.",
+      "apy_base": 5.0,
+      "apy_display": "~5%",
+      "apy_note": "~5% APR para borrowers",
+      "tvl_usd": 100000000,
+      "tvl_btc": null,
+      "tvl_display": "$100M+ TVL (institutional backing)",
+      "risk": "high",
+      "risk_label": "Alto",
+      "custody": "Custodial (cold storage institucional)",
+      "audit": "Auditorías institucionales (no públicas)",
+      "factors": {
+        "positive": [
+          "$200M venture + debt capital",
+          "Institutional-grade cold storage",
+          "5% APR razonable"
+        ],
+        "negative": [
+          "PIVOT a custodial = contradice positioning original",
+          "Custodia centralizada = punto único de fallo",
+          "Crítica de comunidad por cambio de modelo"
+        ]
+      }
+    },
+    {
+      "id": "zest",
+      "rank": 27,
+      "name": "Zest Protocol",
+      "url": "https://zestprotocol.io",
+      "blockchain": "Stacks (Bitcoin L2)",
+      "category": "Pooled BTC Lending",
+      "mechanism": "sBTC pooled lending en Clarity smart contracts",
+      "mechanism_note": "Base ~5% + bonus hasta 7.5% por uso de plataforma.",
+      "apy_base": 12.5,
+      "apy_display": "~12.5%",
+      "apy_note": "~5% base + hasta 7.5% bonus",
+      "tvl_usd": null,
+      "tvl_btc": null,
+      "tvl_display": "Growing (no información pública)",
+      "risk": "med",
+      "risk_label": "Medio",
+      "custody": "Non-custodial (Clarity contracts)",
+      "audit": "Smart contract audits en curso",
+      "factors": {
+        "positive": [
+          "Clarity = verificable functional language",
+          "12.5% APY competitivo",
+          "Composabilidad con Stacks ecosystem"
+        ],
+        "negative": [
+          "Depende de sBTC bridge stability",
+          "TVL bajo vs protocolos maduros",
+          "Hereda risk de Stacks"
+        ]
+      }
+    },
+    {
+      "id": "spark-usdb",
+      "rank": 28,
+      "name": "Spark — USDB",
+      "url": "https://spark.money",
+      "blockchain": "Bitcoin / Ethereum",
+      "category": "Stablecoin + BTC Yield",
+      "mechanism": "USDB respaldado 1:1 por U.S. Treasuries",
+      "mechanism_note": "USDB stablecoin de Brale (entidad regulada EE.UU.) + recompensas en BTC hasta 6% APY.",
+      "apy_base": 6.0,
+      "apy_display": "~6%",
+      "apy_note": "Hasta ~6% diario en BTC",
+      "tvl_usd": null,
+      "tvl_btc": null,
+      "tvl_display": "Growing",
+      "risk": "med_low",
+      "risk_label": "Bajo-Medio",
+      "custody": "Semi-custodial (T-Bills)",
+      "audit": "Brale entity regulada (auditorías en curso)",
+      "factors": {
+        "positive": [
+          "Respaldado por U.S. Treasuries (no algorithmic)",
+          "Entidad regulada — transparencia",
+          "Recompensas en BTC diarias"
+        ],
+        "negative": [
+          "Centrado en stablecoin",
+          "TVL no conocido públicamente"
+        ]
+      }
+    },
+    {
+      "id": "solana-btc-dex",
+      "rank": 29,
+      "name": "Jupiter — wBTC pools",
+      "url": "https://jup.ag",
+      "blockchain": "Solana",
+      "category": "DEX Aggregator",
+      "mechanism": "DEX aggregator con pools wBTC/SOL y wBTC/USDC",
+      "mechanism_note": "Jupiter es el главный aggregator de Solana. Rutea a múltiples DEXs para mejor price.",
+      "apy_base": 3.0,
+      "apy_display": "1-5%",
+      "apy_note": "1-5% LP fees (Raydium, Orca, Phoenix)",
+      "tvl_usd": 200000000,
+      "tvl_btc": null,
+      "tvl_display": "$200M+ wBTC liquidity on Solana",
+      "risk": "med_low",
+      "risk_label": "Bajo-Medio",
+      "custody": "Custodial (LP tokens)",
+      "audit": "Audit by Neodyme + OtterSec",
+      "factors": {
+        "positive": [
+          "Best execution routing en Solana",
+          "TVL significativo en Solana DeFi",
+          "Neodyme audit"
+        ],
+        "negative": [
+          "wrapped BTC (Portal BTC — Wormhole)",
+          "Wormhole bridge risk histórico ($320M hack)",
+          "Solana network downtime risk"
+        ]
+      }
+    },
+    {
+      "id": "raydium-btc",
+      "rank": 30,
+      "name": "Raydium — wBTC pools",
+      "url": "https://raydium.io",
+      "blockchain": "Solana",
+      "category": "DEX / AMM",
+      "mechanism": "AMM + orderbook liquidity sobre Solana",
+      "mechanism_note": "Pools de liquidity con wBTC en Raydium. ACLM (concentrated liquidity) disponible.",
+      "apy_base": 3.5,
+      "apy_display": "1-6%",
+      "apy_note": "1-6% LP fees + RAY incentives",
+      "tvl_usd": 150000000,
+      "tvl_btc": null,
+      "tvl_display": "$150M+ wBTC pools",
+      "risk": "med_low",
+      "risk_label": "Bajo-Medio",
+      "custody": "Custodial (LP tokens)",
+      "audit": "OtterSec audit",
+      "factors": {
+        "positive": [
+          "Solana's main AMM",
+          "ACLM = capital efficient",
+          "Deep liquidity"
+        ],
+        "negative": [
+          "Wormhole bridge risk",
+          "RAY token volatility",
+          "Solana network risk"
+        ]
+      }
+    },
+    {
+      "id": "stride-btc",
+      "rank": 31,
+      "name": "Stride — stBTC",
+      "url": "https://stride.zone",
+      "blockchain": "Cosmos",
+      "category": "Liquid Staking (LSD)",
+      "mechanism": "Liquid staking derivative para Cosmos IBC",
+      "mechanism_note": "Stride liquid staking permite usar stBTC en Cosmos DeFi mientras el underlying está stakeado.",
+      "apy_base": 5.0,
+      "apy_display": "4-7%",
+      "apy_note": "4-7% (Cosmos staking + DeFi yield)",
+      "tvl_usd": 100000000,
+      "tvl_btc": null,
+      "tvl_display": "$100M+",
+      "risk": "med_low",
+      "risk_label": "Bajo-Medio",
+      "custody": "Semi-custodial",
+      "audit": "Informal audits + bug bounty",
+      "factors": {
+        "positive": [
+          "Liquid staking = no lock-up",
+          "Composable con Cosmos IBC DeFi",
+          "IncentivosATOM + DSTRD"
+        ],
+        "negative": [
+          "Nuevo (< 2 años)",
+          "Cosmos slashing risk",
+          "stBTC wrapper risk"
+        ]
+      }
+    },
+    {
+      "id": "pstake-btc",
+      "rank": 32,
+      "name": "pSTAKE — stkBTC",
+      "url": "https://pstake.finance",
+      "blockchain": "Cosmos / ETH",
+      "category": "Liquid Staking Derivative",
+      "mechanism": "LSD con BTC bajo custody de validadores Cosmos",
+      "mechanism_note": "stkBTC es un LSD que permite earn staking rewards mientras usa el token en DeFi.",
+      "apy_base": 4.5,
+      "apy_display": "3-6%",
+      "apy_note": "3-6% (staking + additional DeFi)",
+      "tvl_usd": 50000000,
+      "tvl_btc": null,
+      "tvl_display": "$50M+",
+      "risk": "med_low",
+      "risk_label": "Bajo-Medio",
+      "custody": "Semi-custodial",
+      "audit": "Oak Security audit",
+      "factors": {
+        "positive": [
+          "Oak Security audit",
+          "Composable con Cosmos and ETH",
+          "TVL stable"
+        ],
+        "negative": [
+          "Validator centralization risk",
+          "LSD wrapper risk",
+          "Slashing exposure si validador fail"
+        ]
+      }
+    },
+    {
+      "id": "cardano-lsd",
+      "rank": 33,
+      "name": "Li Propulsion (LiqPlat)",
+      "url": "https://liqprop.com",
+      "blockchain": "Cardano",
+      "category": "Liquid Staking Derivative",
+      "mechanism": "LSD sobre Cardano — liquid staking para ADA y activos",
+      "mechanism_note": "Liquid staking derivative en Cardano. Permite usar liTokens en DeFi.",
+      "apy_base": 4.0,
+      "apy_display": "3-6%",
+      "apy_note": "3-6% (ADA staking + DeFi)",
+      "tvl_usd": 30000000,
+      "tvl_btc": null,
+      "tvl_display": "$30M+",
+      "risk": "med_low",
+      "risk_label": "Bajo-Medio",
+      "custody": "Semi-custodial",
+      "audit": "Auditorías no públicamente verificadas",
+      "factors": {
+        "positive": [
+          "First-mover LSD en Cardano",
+          "Liquid staking = flexibilidad",
+          "Anclado a Cardano security"
+        ],
+        "negative": [
+          "Proyecto nuevo",
+          "TVL bajo vs otros protocolos",
+          "Auditorías no públicas"
+        ]
+      }
+    },
+    {
+      "id": "ardolik",
+      "rank": 34,
+      "name": "Ardonik",
+      "url": "https://ardonik.io",
+      "blockchain": "Cardano",
+      "category": "Liquid Staking Derivative",
+      "mechanism": "LSD + DeFi primitives sobre Cardano",
+      "mechanism_note": "Ardonik ofrece liquid staking con composabilidad DeFi.",
+      "apy_base": 3.5,
+      "apy_display": "2-5%",
+      "apy_note": "2-5% (ADA staking base)",
+      "tvl_usd": 20000000,
+      "tvl_btc": null,
+      "tvl_display": "$20M+",
+      "risk": "med",
+      "risk_label": "Medio",
+      "custody": "Semi-custodial",
+      "audit": "N/A (pre-mainnet o early stage)",
+      "factors": {
+        "positive": [
+          "Composabilidad con Cardano DeFi",
+          "Innovación técnica en Cardano"
+        ],
+        "negative": [
+          "Pre-mainnet / early stage",
+          "TVL mínimo",
+          "Auditorías no verificadas"
+        ]
+      }
+    },
+    {
+      "id": "sundaeswap-btc",
+      "rank": 35,
+      "name": "SundaeSwap",
+      "url": "https://sundaeswap.finance",
+      "blockchain": "Cardano",
+      "category": "DEX / AMM",
+      "mechanism": "AMM DEX sobre Cardano con orderbook híbrido",
+      "mechanism_note": "AMM con orderbook híbrido. Swap de tokens ADA y wrapped assets.",
+      "apy_base": 2.0,
+      "apy_display": "1-4%",
+      "apy_note": "1-4% LP fees (SUNDAE tokens)",
+      "tvl_usd": 50000000,
+      "tvl_btc": null,
+      "tvl_display": "$50M+",
+      "risk": "med_low",
+      "risk_label": "Bajo-Medio",
+      "custody": "Non-custodial (smart contracts Cardano)",
+      "audit": "Tuned auditing process por IOG",
+      "factors": {
+        "positive": [
+          "First-mover DEX en Cardano",
+          "Non-custodial",
+          "Large community"
+        ],
+        "negative": [
+          "TVL modesto",
+          "Mercado Cardano BTC DeFi incipiente",
+          "SUNDAE token incentives declining"
+        ]
+      }
+    },
+    {
+      "id": "minswap-btc",
+      "rank": 36,
+      "name": "Minswap",
+      "url": "https://minswap.org",
+      "blockchain": "Cardano",
+      "category": "DEX / AMM",
+      "mechanism": "AMM con Plutus smart contracts",
+      "mechanism_note": "DEX AMM sobre Cardano. Combina stable pools y constant product pools.",
+      "apy_base": 2.5,
+      "apy_display": "1-5%",
+      "apy_note": "1-5% LP fees + MIN token",
+      "tvl_usd": 40000000,
+      "tvl_btc": null,
+      "tvl_display": "$40M+",
+      "risk": "med_low",
+      "risk_label": "Bajo-Medio",
+      "custody": "Non-custodial (Plutus contracts)",
+      "audit": "Audit por NameOfEvidence (formal methods)",
+      "factors": {
+        "positive": [
+          "Formal verification approach",
+          "Non-custodial",
+          "Plutus smart contracts"
+        ],
+        "negative": [
+          "TVL bajo para Cardano DeFi",
+          "MIN token incentives dependency",
+          "Ecosistema incipiente"
+        ]
+      }
+    },
+    {
+      "id": "bisq",
+      "rank": 37,
+      "name": "Bisq 2",
+      "url": "https://bisq.network",
+      "blockchain": "Bitcoin L1 (P2P)",
+      "category": "P2P Exchange / No-KYC",
+      "mechanism": "2-of-2 multisig escrow — desktop app",
+      "mechanism_note": "Exchange P2P sin KYC. Tor-routed. 2-of-2 multisig escrow. Trade limits hasta 0.0624 BTC.",
+      "apy_base": null,
+      "apy_display": "Fee-based",
+      "apy_note": "No yield — exchange P2P. Trading fees 0.05-1%.",
+      "tvl_usd": null,
+      "tvl_btc": null,
+      "tvl_display": "Volumen descentralizado (no trackeable)",
+      "risk": "low",
+      "risk_label": "Bajo",
+      "custody": "Non-custodial (2-of-2 multisig)",
+      "audit": "Open source — security review por comunidad",
+      "factors": {
+        "positive": [
+          "100% non-custodial — sin intermediary",
+          "No KYC — privacidad total",
+          "Tor-routed — censorship resistant",
+          "Bisq DAO governance"
+        ],
+        "negative": [
+          "No yield — exchange puro, no DeFi",
+          "Slow onboarding (~7 min trade time)",
+          "Limitado a 0.0624 BTC por trade"
+        ]
+      }
+    },
+    {
+      "id": "robosats",
+      "rank": 38,
+      "name": "RoboSats",
+      "url": "https://robosats6txyht2dd.onion/",
+      "blockchain": "Lightning Network (P2P)",
+      "category": "P2P Exchange / Lightning",
+      "mechanism": "Hold invoices + fidelity bonds en Lightning",
+      "mechanism_note": "P2P exchange sobre Lightning Network con hold invoices. Tor-only. Average trade ~7 min.",
+      "apy_base": null,
+      "apy_display": "Fee-based",
+      "apy_note": "No yield — exchange P2P. 0.2-0.5% trading fee.",
+      "tvl_usd": null,
+      "tvl_btc": null,
+      "tvl_display": "~100K+ usuarios (estimado)",
+      "risk": "low",
+      "risk_label": "Bajo",
+      "custody": "Non-custodial (Lightning hold invoices)",
+      "audit": "Open source",
+      "factors": {
+        "positive": [
+          "Non-custodial con hold invoices",
+          "Tor-only = privacy máxima",
+          "1% fidelity bonds = anti-scamming",
+          "60+ fiat currencies"
+        ],
+        "negative": [
+          "No yield — puro exchange",
+          "Requiere Lightning node",
+          "Tor dependency"
+        ]
+      }
+    },
+    {
+      "id": "liquid-rwa",
+      "rank": 39,
+      "name": "Liquid Network — RWA",
+      "url": "https://liquid.net",
+      "blockchain": "Liquid (Bitfinex)",
+      "category": "RWA Tokenization",
+      "mechanism": "Tokenización de activos del mundo real (Tether, acciones, bonos)",
+      "mechanism_note": "Red de Bitfinex para tokenización. $250M+ en activos tokenizados (U.S. Treasuries, acciones).",
+      "apy_base": 3.0,
+      "apy_display": "2-5%",
+      "apy_note": "2-5% en ciertos RWAs (bonos tokenizados)",
+      "tvl_usd": 250000000,
+      "tvl_btc": null,
+      "tvl_display": "$250M+ tokenizados",
+      "risk": "med_low",
+      "risk_label": "Bajo-Medio",
+      "custody": "Custodial (Bitfinex/Liquid)",
+      "audit": "Regulatory compliance (Hong Kong VASP)",
+      "factors": {
+        "positive": [
+          "$250M+ en activos reales tokenizados",
+          "Tercer blockchain más grande para RWA",
+          "Bonos U.S. Treasury tokenizados"
+        ],
+        "negative": [
+          "Custodial (Bitfinex)",
+          "KYC/AML requerido",
+          "Regulatory risk (jurisdicción Hong Kong)"
+        ]
+      }
+    },
+    {
+      "id": "uniswap-bitcoin-l2",
+      "rank": 40,
+      "name": "Uniswap — Bitcoin L2s",
+      "url": "https://uniswap.org",
+      "blockchain": "Arbitrum / Base / Optimism",
+      "category": "DEX multi-chain",
+      "mechanism": "AMM en Arbitrum, Base, Optimism con wBTC",
+      "mechanism_note": "Uniswap V3 deployments en L2s de Ethereum. wBTC/USDC, wBTC/ETH pools.",
+      "apy_base": 2.5,
+      "apy_display": "1-5%",
+      "apy_note": "1-5% LP fees (gas mucho más bajo que L1)",
+      "tvl_usd": 300000000,
+      "tvl_btc": null,
+      "tvl_display": "$300M+ wBTC TVL across L2s",
+      "risk": "low",
+      "risk_label": "Bajo",
+      "custody": "Custodial (LP tokens)",
+      "audit": "OpenZeppelin + múltiples audits",
+      "factors": {
+        "positive": [
+          "Lower gas que Ethereum L1",
+          "Same battle-tested Uniswap V3",
+          "Multi-L2 deployment"
+        ],
+        "negative": [
+          "Bridge risk a L2 (Arbitrum/Base bridge)",
+          "Impermanent loss",
+          "Fragmentación cross-L2"
+        ]
+      }
+    },
+    {
+      "id": "revert-btc",
+      "rank": 41,
+      "name": "Revert Finance",
+      "url": "https://revert.finance",
+      "blockchain": "Ethereum",
+      "category": "Liquidity Management",
+      "mechanism": "LMC + autocorrelation para Uniswap V3 LPs",
+      "mechanism_note": "Herramienta de liquidity management para Uniswap V3. Autocompound + range management.",
+      "apy_base": 3.5,
+      "apy_display": "2-6%",
+      "apy_note": "2-6% net after fees (vs manual LP)",
+      "tvl_usd": 50000000,
+      "tvl_btc": null,
+      "tvl_display": "$50M+",
+      "risk": "med_low",
+      "risk_label": "Bajo-Medio",
+      "custody": "Non-custodial (user vault)",
+      "audit": "OpenZeppelin audit",
+      "factors": {
+        "positive": [
+          "Auto-range management = reduced impermanent loss",
+          "OpenZeppelin audit",
+          "Non-custodial vault model"
+        ],
+        "negative": [
+          "Fee adicional sobre performance",
+          "Depende de Uniswap V3",
+          "Estrategias son trade secrets"
+        ]
+      }
+    },
+    {
+      "id": "instadapp-btc",
+      "rank": 42,
+      "name": "Instadapp",
+      "url": "https://instadapp.io",
+      "blockchain": "Multi-chain",
+      "category": "DeFi Aggregator / Management",
+      "mechanism": "Smart wallet + cross-protocol optimization",
+      "mechanism_note": "Smart wallet que agrega Aave, Compound, MakerDAO. Permite crear posiciones creativas.",
+      "apy_base": 3.0,
+      "apy_display": "2-5%",
+      "apy_note": "2-5% (via optimal routing)",
+      "tvl_usd": 500000000,
+      "tvl_btc": null,
+      "tvl_display": "$500M+ multi-chain",
+      "risk": "med_low",
+      "risk_label": "Bajo-Medio",
+      "custody": "Custodial (smart wallet)",
+      "audit": "OpenZeppelin audit",
+      "factors": {
+        "positive": [
+          "Cross-protocol optimization",
+          "Smart wallet abstraction",
+          "Multi-chain"
+        ],
+        "negative": [
+          "Smart wallet = derived authority",
+          "Historical hack (2020 — $370K)",
+          "Complexity = higher risk surface"
+        ]
+      }
+    },
+    {
+      "id": "maple-btc",
+      "rank": 43,
+      "name": "Maple Finance",
+      "url": "https://maple.finance",
+      "blockchain": "Ethereum",
+      "category": "Institutional Lending",
+      "mechanism": "Institutional P2P lending — no retail",
+      "mechanism_note": "Lending para instituciones financieras (hedge funds, market makers). Pool de liquidity para bilateral loans.",
+      "apy_base": 5.0,
+      "apy_display": "4-8%",
+      "apy_note": "4-8% para lenders institucionales",
+      "tvl_usd": 200000000,
+      "tvl_btc": null,
+      "tvl_display": "$200M+ (premia.io pool)",
+      "risk": "med",
+      "risk_label": "Medio",
+      "custody": "Custodial (Pool delegations)",
+      "audit": "Lenders must conduct own KYC/KYB",
+      "factors": {
+        "positive": [
+          "Institutional-grade borrowers",
+          "4-8% APY competitivo",
+          "No retail = menos volatile"
+        ],
+        "negative": [
+          "Custodial — lenders trust Maple pool",
+          "No se publican datos detallados",
+          "Liquidity riesgo en withdraws"
+        ]
       }
     }
   ]
