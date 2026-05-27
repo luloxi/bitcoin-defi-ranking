@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bitcoin DeFi Ranking — Mejores plataformas para generar yield on-chain</title>
+  <meta name="description" content="Ranking actualizado de las mejores plataformas Bitcoin DeFi para generar intereses en BTC on-chain. Compara APY, riesgo y factores de seguridad.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #111119;
+      --bg-card: #16161f;
+      --bg-card-hover: #1c1c28;
+      --border: #222233;
+      --border-accent: #2e2e44;
+      --bitcoin: #f7931a;
+      --bitcoin-dim: #b86d10;
+      --bitcoin-glow: rgba(247,147,26,0.15);
+      --gold: #ffd700;
+      --text-primary: #f0f0f8;
+      --text-secondary: #9090aa;
+      --text-muted: #5a5a70;
+      --green: #22c55e;
+      --green-dim: #166534;
+      --green-bg: rgba(34,197,94,0.1);
+      --yellow: #eab308;
+      --yellow-dim: #854d0e;
+      --yellow-bg: rgba(234,179,8,0.1);
+      --orange: #f97316;
+      --orange-dim: #9a3412;
+      --orange-bg: rgba(249,115,22,0.1);
+      --red: #ef4444;
+      --red-dim: #991b1b;
+      --red-bg: rgba(239,68,68,0.1);
+      --font-main: 'Space Grotesk', system-ui, sans-serif;
+      --font-mono: 'Space Mono', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-main);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ─── HEADER ─── */
+    header {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--bitcoin);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      color: #fff;
+      font-family: var(--font-mono);
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: -0.3px;
+    }
+
+    .logo-text span { color: var(--bitcoin); }
+
+    .tagline {
+      font-size: 13px;
+      color: var(--text-secondary);
+      display: none;
+    }
+
+    @media (min-width: 640px) { .tagline { display: block; } }
+
+    .updated-badge {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 72px 24px 56px;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bitcoin-glow);
+      border: 1px solid var(--bitcoin-dim);
+      color: var(--bitcoin);
+      font-size: 12px;
+      font-weight: 600;
+      font-family: var(--font-mono);
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 700;
+      letter-spacing: -1px;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 .accent { color: var(--bitcoin); }
+
+    .hero-desc {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin: 0 auto 40px;
+    }
+
+    /* ─── STATS BAR ─── */
+    .stats-bar {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 40px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+    }
+
+    .stat-value {
+      font-size: 22px;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      color: var(--bitcoin);
+      margin-bottom: 2px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    /* ─── RISK LEGEND ─── */
+    .legend-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 32px;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 20px;
+    }
+
+    .legend-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      width: 100%;
+      margin-bottom: 4px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .risk-badge {
+      font-size: 10px;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      padding: 2px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .risk-low { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-dim); }
+    .risk-med-low { background: var(--yellow-bg); color: var(--yellow); border: 1px solid var(--yellow-dim); }
+    .risk-med { background: var(--orange-bg); color: var(--orange); border: 1px solid var(--orange-dim); }
+    .risk-high { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-dim); }
+
+    /* ─── RANKING TABLE ─── */
+    .table-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    .table-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      gap: 12px;
+    }
+
+    .table-header h2 {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+    }
+
+    thead {
+      background: var(--bg-card);
+    }
+
+    th {
+      padding: 12px 20px;
+      text-align: left;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    th:first-child { border-radius: 16px 0 0 0; }
+    th:last-child { border-radius: 0 16px 0 0; }
+
+    tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+
+    tbody tr:last-child { border-bottom: none; }
+
+    tbody tr:hover { background: var(--bg-card-hover); }
+
+    td {
+      padding: 16px 20px;
+      font-size: 14px;
+      vertical-align: middle;
+    }
+
+    .rank-cell {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--text-muted);
+      width: 52px;
+    }
+
+    .rank-1 .rank-cell { color: var(--gold); }
+    .rank-2 .rank-cell { color: #c0c0c0; }
+    .rank-3 .rank-cell { color: #cd7f32; }
+
+    .platform-cell {
+      min-width: 200px;
+    }
+
+    .platform-name {
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .platform-name a {
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .platform-name a:hover { color: var(--bitcoin); }
+
+    .platform-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .chain-badge {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: var(--bitcoin);
+      background: var(--bitcoin-glow);
+      border: 1px solid var(--bitcoin-dim);
+      padding: 2px 8px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    .apy-cell {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--green);
+    }
+
+    .apy-note {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 400;
+      font-family: var(--font-main);
+    }
+
+    .tvl-cell {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .mechanism-cell {
+      font-size: 13px;
+      color: var(--text-secondary);
+      max-width: 220px;
+    }
+
+    .mechanism-cell small {
+      font-size: 11px;
+      color: var(--text-muted);
+      display: block;
+      margin-top: 2px;
+    }
+
+    /* ─── RISK BREAKDOWN ─── */
+    .risk-breakdown {
+      margin-top: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .risk-factor {
+      font-size: 10px;
+      font-family: var(--font-mono);
+      padding: 2px 6px;
+      border-radius: 3px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-accent);
+      color: var(--text-muted);
+    }
+
+    .risk-factor.pos { color: var(--green); border-color: var(--green-dim); background: var(--green-bg); }
+    .risk-factor.warn { color: var(--yellow); border-color: var(--yellow-dim); background: var(--yellow-bg); }
+    .risk-factor.neg { color: var(--red); border-color: var(--red-dim); background: var(--red-bg); }
+
+    /* ─── METHODOLOGY ─── */
+    .methodology {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    .methodology h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    .methodology-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .method-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .method-card h3 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .method-card p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .method-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--bitcoin-glow);
+      border: 1px solid var(--bitcoin-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--bitcoin); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 640px) {
+      .hide-mobile { display: none; }
+      .hero { padding: 48px 24px 40px; }
+      .table-wrapper { border-radius: 12px; }
+      th, td { padding: 12px 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">₿</div>
+      <div>
+        <div class="logo-text">Bitcoin<span>DeFi</span> Ranking</div>
+        <div class="tagline">Yield on-chain actualizado</div>
+      </div>
+    </a>
+    <div class="updated-badge">⚡ Actualizado: may. 2026</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-eyebrow">● Ranking赤裸 Bitcoin DeFi 2026</div>
+  <h1>Las mejores plataformas para<br><span class="accent">generar yield con Bitcoin</span></h1>
+  <p class="hero-desc">Análisis comparativo de protocolos DeFi que permiten obtener rendimientos sobre BTC on-chain. Ranking por APY anual con niveles de riesgo detallados.</p>
+
+  <div class="stats-grid" style="max-width: 640px; margin: 0 auto;">
+    <div class="stat-card">
+      <div class="stat-value">$7B+</div>
+      <div class="stat-label">TVL Bitcoin DeFi</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">13</div>
+      <div class="stat-label">Protocolos analizados</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">8</div>
+      <div class="stat-label">Blockchains cubiertas</div>
+    </div>
+  </div>
+</section>
+
+<section class="legend-section">
+  <div class="legend">
+    <div class="legend-title">Niveles de riesgo</div>
+    <div class="legend-item"><span class="risk-badge risk-low">Bajo</span> Productivo, auditorías completas, TVL alto, no custodial</div>
+    <div class="legend-item"><span class="risk-badge risk-med-low">Bajo-Medio</span> Producto establecido con factores de riesgo moderados</div>
+    <div class="legend-item"><span class="risk-badge risk-med">Medio</span> Nueva generación con TVL creciente pero exposición a contratos nuevos</div>
+    <div class="legend-item"><span class="risk-badge risk-high">Alto</span> Custodial, pivotes recientes, bridges de alto riesgo o bajo TVL</div>
+  </div>
+</section>
+
+<section class="table-section">
+  <div class="table-header">
+    <h2>Ranking por APY anual</h2>
+    <span class="chain-badge">Mayo 2026</span>
+  </div>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Plataforma</th>
+          <th>APY base</th>
+          <th class="hide-mobile">TVL</th>
+          <th>Riesgo</th>
+          <th class="hide-mobile">Mecanismo / Chain</th>
+          <th class="hide-mobile">Factores clave</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 1 -->
+        <tr class="rank-1">
+          <td class="rank-cell">1</td>
+          <td class="platform-cell">
+            <div class="platform-name"><a href="https://babylonlabs.io" target="_blank" rel="noopener">Babylon</a></div>
+            <div class="platform-meta">Bitcoin L1 · Non-custodial</div>
+            <span class="chain-badge">Bitcoin L1</span>
+          </td>
+          <td class="apy-cell">~0.42%</td>
+          <td class="tvl-cell hide-mobile">~$4.6B<br><small style="color:var(--text-muted)">~57K BTC</small></td>
+          <td><span class="risk-badge risk-low">Bajo</span></td>
+          <td class="mechanism-cell hide-mobile">
+            Native BTC staking via EOTS<br>
+            <small>Bloquea BTC directo en wallet propio, sin bridge ni wrap</small>
+          </td>
+          <td class="hide-mobile">
+            <div class="risk-breakdown">
+              <span class="risk-factor pos">✓ No bridge/wrap</span>
+              <span class="risk-factor pos">✓ 57K+ BTC stakeado</span>
+              <span class="risk-factor pos">✓ 250 FPs distribuidos</span>
+              <span class="risk-factor pos">✓ Top 4 holder BTC</span>
+              <span class="risk-factor warn">⚠ APY bajo (~0.4%)</span>
+            </div>
+          </td>
+        </tr>
+        <!-- 2 -->
+        <tr class="rank-2">
+          <td class="rank-cell">2</td>
+          <td class="platform-cell">
+            <div class="platform-name"><a href="https://coredao.org" target="_blank" rel="noopener">Core Chain</a></div>
+            <div class="platform-meta">Satoshi Plus · Non-custodial</div>
+            <span class="chain-badge">Bitcoin L1</span>
+          </td>
+          <td class="apy-cell">~5.4%</td>
+          <td class="tvl-cell hide-mobile">~$500M+</td>
+          <td><span class="risk-badge risk-med-low">Bajo-Medio</span></td>
+          <td class="mechanism-cell hide-mobile">
+            CLTV time-lock BTC<br>
+            <small>BTC bloqueado desde wallet propio via Bitcoin CLTV opcode</small>
+          </td>
+          <td class="hide-mobile">
+            <div class="risk-breakdown">
+              <span class="risk-factor pos">✓ BTC en tu wallet</span>
+              <span class="risk-factor pos">✓ Sin wrap/bridge</span>
+              <span class="risk-factor pos">✓ PoW+BTC hash delegation</span>
+              <span class="risk-factor warn">⚠ Proyecto nuevo (2023)</span>
+              <span class="risk-factor warn">⚠ TVL moderado vs. Babylon</span>
+            </div>
+          </td>
+        </tr>
+        <!-- 3 -->
+        <tr class="rank-3">
+          <td class="rank-cell">3</td>
+          <td class="platform-cell">
+            <div class="platform-name"><a href="https://aave.com" target="_blank" rel="noopener">Aave — wBTC / tBTC</a></div>
+            <div class="platform-meta">Lending · TVL líder DeFi</div>
+            <span class="chain-badge">Ethereum</span>
+          </td>
+          <td class="apy-cell">2–5%</td>
+          <td class="tvl-cell hide-mobile">$25B+<br><small style="color:var(--text-muted)">(protocolo total)</small></td>
+          <td><span class="risk-badge risk-low">Bajo</span></td>
+          <td class="mechanism-cell hide-mobile">
+            Wrapped BTC lending<br>
+            <small>Aave v3 multi-chain, Collateral wBTC / tBTC</small>
+          </td>
+          <td class="hide-mobile">
+            <div class="risk-breakdown">
+              <span class="risk-factor pos">✓ 7 años auditado</span>
+              <span class="risk-factor pos">✓ $25B+ TVL</span>
+              <span class="risk-factor pos">✓ TVL más grande DeFi</span>
+              <span class="risk-factor warn">⚠ Custodial (wBTC/tBTC bridge)</span>
+              <span class="risk-factor warn">⚠ Exposición ETH/bridge risk</span>
+            </div>
+          </td>
+        </tr>
+        <!-- 4 -->
+        <tr>
+          <td class="rank-cell">4</td>
+          <td class="platform-cell">
+            <div class="platform-name"><a href="https://stacks.co" target="_blank" rel="noopener">Stacks — sBTC Base Yield</a></div>
+            <div class="platform-meta">Bitcoin L2 · Non-custodial multisig</div>
+            <span class="chain-badge">Stacks / Bitcoin L2</span>
+          </td>
+          <td class="apy-cell">~5%</td>
+          <td class="tvl-cell hide-mobile">Creciendo<br><small style="color:var(--text-muted)">(sBTC en expansión)</small></td>
+          <td><span class="risk-badge risk-med-low">Bajo-Medio</span></td>
+          <td class="mechanism-cell hide-mobile">
+            sBTC 1:1 multisig BTC<br>
+            <small>Signers STX stackers retienen BTC; recompensas pagadas en BTC</small>
+          </td>
+          <td class="hide-mobile">
+            <div class="risk-breakdown">
+              <span class="risk-factor pos">✓ Recompensas en BTC</span>
+              <span class="risk-factor pos">✓ PoX anchored to BTC</span>
+              <span class="risk-factor warn">⚠ Riesgo multisig signer set</span>
+              <span class="risk-factor warn">⚠ sBTC relativamente nuevo</span>
+              <span class="risk-factor neg">✗ ALEX Lab exploit $8.3M (jun-2025)</span>
+            </div>
+          </td>
+        </tr>
+        <!-- 5 -->
+        <tr>
+          <td class="rank-cell">5</td>
+          <td class="platform-cell">
+            <div class="platform-name"><a href="https://morpho.org" target="_blank" rel="noopener">Morpho — BTC Markets</a></div>
+            <div class="platform-meta">Lending optimizado · Ethereum</div>
+            <span class="chain-badge">Ethereum</span>
+          </td>
+          <td class="apy-cell">3–8%</td>
+          <td class="tvl-cell hide-mobile">~$1.5B+</td>
+          <td><span class="risk-badge risk-low">Bajo</span></td>
+          <td class="mechanism-cell hide-mobile">
+            Wrapped BTC lending<br>
+            <small>Curators rebalancean markets para maximizar APY vs Aave</small>
+          </td>
+          <td class="hide-mobile">
+            <div class="risk-breakdown">
+              <span class="risk-factor pos">✓ Superior a Aave base rates</span>
+              <span class="risk-factor pos">✓ Auditorías formales</span>
+              <span class="risk-factor pos">✓ Cursor azul (blue-chip)</span>
+              <span class="risk-factor warn">⚠ Bridge risk (wBTC/tBTC)</span>
+            </div>
+          </td>
+        </tr>
+        <!-- 6 -->
+        <tr>
+          <td class="rank-cell">6</td>
+          <td class="platform-cell">
+            <div class="platform-name"><a href="https://spark.money" target="_blank" rel="noopener">Spark — USDB + BTC Rewards</a></div>
+            <div class="platform-meta">Stablecoin · Fiat-backed</div>
+            <span class="chain-badge">Bitcoin / Ethereum</span>
+          </td>
+          <td class="apy-cell">~6%</td>
+          <td class="tvl-cell hide-mobile">N/A<br><small style="color:var(--text-muted)">(creciente)</small></td>
+          <td><span class="risk-badge risk-med-low">Bajo-Medio</span></td>
+          <td class="mechanism-cell hide-mobile">
+            USDB stablecoin + BTC yield<br>
+            <small>Respaldado 1:1 por U.S. Treasuries; recompensas en BTC</small>
+          </td>
+          <td class="hide-mobile">
+            <div class="risk-breakdown">
+              <span class="risk-factor pos">✓ Respaldado por T-Bills</span>
+              <span class="risk-factor pos">✓ Regulator entity (Brale/Flashnet)</span>
+              <span class="risk-factor warn">⚠ Stablecoin-centric (no nativo BTC)</span>
+              <span class="risk-factor warn">⚠ Proyecto mediano</span>
+            </div>
+          </td>
+        </tr>
+        <!-- 7 -->
+        <tr>
+          <td class="rank-cell">7</td>
+          <td class="platform-cell">
+            <div class="platform-name"><a href="https://bitlayer.org" target="_blank" rel="noopener">Bitlayer</a></div>
+            <div class="platform-meta">BitVM L2 · YBTC yield</div>
+            <span class="chain-badge">Bitcoin L2 (BitVM)</span>
+          </td>
+          <td class="apy-cell">~20%</td>
+          <td class="tvl-cell hide-mobile">$650–850M<br><small style="color:var(--text-muted)">peak $850M</small></td>
+          <td><span class="risk-badge risk-med">Medio</span></td>
+          <td class="mechanism-cell hide-mobile">
+            BitVM optimistic rollup<br>
+            <small>BLBTC via DeSyn; BTC sale del wallet a bridge L2</small>
+          </td>
+          <td class="hide-mobile">
+            <div class="risk-breakdown">
+              <span class="risk-factor pos">✓ BitVM paradigm (innovador)</span>
+              <span class="risk-factor pos">✓ +200 protocolos ecosystem</span>
+              <span class="risk-factor pos">✓ Top 3 Bitcoin L2 TVL</span>
+              <span class="risk-factor warn">⚠ Nuevo (< 2 años mainnet)</span>
+              <span class="risk-factor warn">⚠ Bridge required para yield</span>
+              <span class="risk-factor neg">✗ KYC retiros en algunos protocolos</span>
+            </div>
+          </td>
+        </tr>
+        <!-- 8 -->
+        <tr>
+          <td class="rank-cell">8</td>
+          <td class="platform-cell">
+            <div class="platform-name"><a href="https://eigenlayer.xyz" target="_blank" rel="noopener">EigenLayer — BTC restaking</a></div>
+            <div class="platform-meta">Restaking · Ethereum</div>
+            <span class="chain-badge">Ethereum</span>
+          </td>
+          <td class="apy-cell">4–5%</td>
+          <td class="tvl-cell hide-mobile">~$15B+<br><small style="color:var(--text-muted)">(protocolo total)</small></td>
+          <td><span class="risk-badge risk-med-low">Bajo-Medio</span></td>
+          <td class="mechanism-cell hide-mobile">
+            Restaking tBTC / wBTC<br>
+            <small>Activa servicios de AVS; yield de fees de validadores</small>
+          </td>
+          <td class="hide-mobile">
+            <div class="risk-breakdown">
+              <span class="risk-factor pos">✓ TVL masivo ($15B+)</span>
+              <span class="risk-factor pos">✓ Sload theme top-tier</span>
+              <span class="risk-factor warn">⚠ Custodial (tBTC bridge)</span>
+              <span class="risk-factor warn">⚠ slashing risk si AVS fail</span>
+              <span class="risk-factor warn">⚠ Complex slashing mechanics</span>
+            </div>
+          </td>
+        </tr>
+        <!-- 9 -->
+        <tr>
+          <td class="rank-cell">9</td>
+          <td class="platform-cell">
+            <div class="platform-name"><a href="https://zestprotocol.io" target="_blank" rel="noopener">Zest Protocol</a></div>
+            <div class="platform-meta">Lending · Stacks L2</div>
+            <span class="chain-badge">Stacks / Bitcoin L2</span>
+          </td>
+          <td class="apy-cell">~12.5%</td>
+          <td class="tvl-cell hide-mobile">En desarrollo<br><small style="color:var(--text-muted)">( growing)</small></td>
+          <td><span class="risk-badge risk-med">Medio</span></td>
+          <td class="mechanism-cell hide-mobile">
+            sBTC pooled lending<br>
+            <small>Clarity smart contracts sobre Stacks; base ~5% + bonus hasta 7.5%</small>
+          </td>
+          <td class="hide-mobile">
+            <div class="risk-breakdown">
+              <span class="risk-factor pos">✓ Smart contracts Clarity</span>
+              <span class="risk-factor pos">✓ 12.5% APY atractivo</span>
+              <span class="risk-factor warn">⚠ Depende de sBTC bridge stability</span>
+              <span class="risk-factor warn">⚠ TVL bajo vs. protocolos maduros</span>
+              <span class="risk-factor neg">✗ Heredado risk profile de Stacks</span>
+            </div>
+          </td>
+        </tr>
+        <!-- 10 -->
+        <tr>
+          <td class="rank-cell">10</td>
+          <td class="platform-cell">
+            <div class="platform-name"><a href="https://velar.io" target="_blank" rel="noopener">Velar</a></div>
+            <div class="platform-meta">Perp DEX · Stacks L2</div>
+            <span class="chain-badge">Stacks / Bitcoin L2</span>
+          </td>
+          <td class="apy-cell">~15%</td>
+          <td class="tvl-cell hide-mobile">Testnet → Mainnet<br><small style="color:var(--text-muted)">(150K+ testnet users)</small></td>
+          <td><span class="risk-badge risk-med">Medio</span></td>
+          <td class="mechanism-cell hide-mobile">
+            sBTC LP + perp fees<br>
+            <small>Perpetual DEX hasta 20x leverage; LP fees + token incentives</small>
+          </td>
+          <td class="hide-mobile">
+            <div class="risk-breakdown">
+              <span class="risk-factor pos">✓ Primer perp DEX Bitcoin-native</span>
+              <span class="risk-factor pos">✓ 150K+ usuarios testnet</span>
+              <span class="risk-factor warn">⚠ Mainnet aún no madura</span>
+              <span class="risk-factor warn">⚠ DeFi activity concentrado en LPs</span>
+              <span class="risk-factor neg">✗ ALEX exploit afecta ecosistema Stacks</span>
+            </div>
+          </td>
+        </tr>
+        <!-- 11 -->
+        <tr>
+          <td class="rank-cell">11</td>
+          <td class="platform-cell">
+            <div class="platform-name">Liquidium</div>
+            <div class="platform-meta">P2P Lending · Bitcoin L1 (DLCs)</div>
+            <span class="chain-badge">Bitcoin L1</span>
+          </td>
+          <td class="apy-cell">Variable</td>
+          <td class="tvl-cell hide-mobile">$360M+ volumen<br><small style="color:var(--text-muted)">75K+ loans</small></td>
+          <td><span class="risk-badge risk-med-low">Bajo-Medio</span></td>
+          <td class="mechanism-cell hide-mobile">
+            DLCs + PSBTs<br>
+            <small>P2P sin bridge; collaterals Ordinals/Runes/BRC-20</small>
+          </td>
+          <td class="hide-mobile">
+            <div class="risk-breakdown">
+              <span class="risk-factor pos">✓ Trustless P2P (DLCs)</span>
+              <span class="risk-factor pos">✓ Sin wrap/bridge/wrapper</span>
+              <span class="risk-factor pos">✓ $6.3M intereses pagados</span>
+              <span class="risk-factor warn">⚠ Colateral crypto volátil (Ordinals)</span>
+              <span class="risk-factor warn">⚠ Mercado P2P menos líquido</span>
+            </div>
+          </td>
+        </tr>
+        <!-- 12 -->
+        <tr>
+          <td class="rank-cell">12</td>
+          <td class="platform-cell">
+            <div class="platform-name">Pendle — uniBTC / SolvBTC</div>
+            <div class="platform-meta">Yield trading · Ethereum</div>
+            <span class="chain-badge">Ethereum / Multi-chain</span>
+          </td>
+          <td class="apy-cell">1–5%</td>
+          <td class="tvl-cell hide-mobile">~$500M+</td>
+          <td><span class="risk-badge risk-med-low">Bajo-Medio</span></td>
+          <td class="mechanism-cell hide-mobile">
+            PT/YT yield tokens<br>
+            <small>Principle tokens + yield tokens; trading de yields sobre BTC wrapped</small>
+          </td>
+          <td class="hide-mobile">
+            <div class="risk-breakdown">
+              <span class="risk-factor pos">✓ Liquidez profunda (Pendle markets)</span>
+              <span class="risk-factor pos">✓ Exposición a yield estructurado</span>
+              <span class="risk-factor warn">⚠ Bridge risk (uniBTC/SolvBTC)</span>
+              <span class="risk-factor warn">⚠ Exposición a smart contracts Pendle</span>
+            </div>
+          </td>
+        </tr>
+        <!-- 13 -->
+        <tr>
+          <td class="rank-cell">13</td>
+          <td class="platform-cell">
+            <div class="platform-name">Sovryn</div>
+            <div class="platform-meta">DeFi · Rootstock/RSK</div>
+            <span class="chain-badge">Rootstock (RSK)</span>
+          </td>
+          <td class="apy-cell">~0.29%</td>
+          <td class="tvl-cell hide-mobile">~103 BTC<br><small style="color:var(--text-muted)">(~ $11M)</small></td>
+          <td><span class="risk-badge risk-med">Medio</span></td>
+          <td class="mechanism-cell hide-mobile">
+            RBTC via PoW-peg<br>
+            <small>Lending + AMM + SOV staking en RSK (sidechain BTC)</small>
+          </td>
+          <td class="hide-mobile">
+            <div class="risk-breakdown">
+              <span class="risk-factor pos">✓ No-custodial (RSK peg)</span>
+              <span class="risk-factor pos">✓ Immunefi bug bounty $1M</span>
+              <span class="risk-factor pos">✓ DAO governance (SOV)</span>
+              <span class="risk-factor neg">✗ TVL muy bajo ($11M)</span>
+              <span class="risk-factor neg">✗ RSK merge mining concentration</span>
+              <span class="risk-factor warn">⚠ RBTC bridge dependency</span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="methodology">
+  <h2>Metodología de evaluación</h2>
+  <div class="methodology-grid">
+    <div class="method-card">
+      <h3><span class="method-icon">⛓</span> Seguridad blockchain</h3>
+      <p>Se evalúa la seguridad de la capa base: Bitcoin L1 (mayor seguridad), Bitcoin L2 (BitVM/Stacks/Rootstock), Ethereum (con f forks/ slashing), o sidechains centralizados.</p>
+    </div>
+    <div class="method-card">
+      <h3><span class="method-icon">🔐</span> Modelo de custodia</h3>
+      <p>Non-custodial > custodial. Se distingue entre BTC en tu wallet (CLTV/EOTS), wrapped en bridges (wBTC/tBTC), o custodiado por terceros. Cada bridge añade un punto de fallo.</p>
+    </div>
+    <div class="method-card">
+      <h3><span class="method-icon">📊</span> TVL y liquidez</h3>
+      <p>El Total Value Locked indica confianza del mercado. Protocolos con TVL >$1B son más seguros en términos de liquidez. TVL bajo implica slippage alto y vulnerabilidad a ataques.</p>
+    </div>
+    <div class="method-card">
+      <h3><span class="method-icon">🔍</span> Auditorías y reputación</h3>
+      <p>Se considera: número y calidad de audits (Trail of Bits, OpenZeppelin, Certora), historial de exploits, antigüedad del equipo, y bug bounty programs.</p>
+    </div>
+    <div class="method-card">
+      <h3><span class="method-icon">🌉</span> Riesgo de bridge</h3>
+      <p>Cada wrap/bridge (WBTC, tBTC, sBTC, RBTC) introduce riesgo de smart contract centralizado. Babylon y Core eliminan este riesgo; Sovryn y Bitlayer lo minimizan; Lava lo maximiza.</p>
+    </div>
+    <div class="method-card">
+      <h3><span class="method-icon">📋</span> Madurez del smart contract</h3>
+      <p>Protocolos con >1 año mainnet ysin incidentes graves reciben mejor calificación. Protocolos nuevos (< 2 años) o con exploits recientes reciben ajustes negativos.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <p>Datos de TVL y APY son estimados y basados en fuentes públicas (mayo 2026). No es consejo financiero. Siempre investiga antes de invertir.</p>
+    <p style="margin-top: 8px;">Built with 🧡 — <a href="https://github.com/luloxi/bitcoin-defi-ranking" target="_blank" rel="noopener">Ver源码</a></p>
+  </div>
+</footer>
+
+<script>
+  // No external JS needed — pure HTML/CSS table
+</script>
+</body>
+</html>
