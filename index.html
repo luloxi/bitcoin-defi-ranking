@@ -544,8 +544,11 @@
     @media (max-width: 640px) {
       .hide-mobile { display: none; }
       .hero { padding: 44px 24px 36px; }
-      th, td { padding: 11px 12px; }
+      th, td { padding: 11px 10px; }
       .table-wrapper { border-radius: 12px; }
+      table { min-width: 640px; }
+      .apy-max { font-size: 11px; }
+      .invest-btn { padding: 4px 8px; font-size: 11px; }
     }
   </style>
 </head>
@@ -629,7 +632,7 @@
           <th>#</th>
           <th>Plataforma</th>
           <th>APY min</th>
-          <th class="hide-mobile">APY máx</th>
+          <th>APY máx</th>
           <th class="hide-mobile">TVL</th>
           <th>Riesgo</th>
           <th class="hide-mobile">Mecanismo / Chain</th>
@@ -790,7 +793,7 @@
           ${chainHtml}
         </td>
         <td>${apyMinCell}</td>
-        <td class="hide-mobile">${apyMaxCell}</td>
+        <td>${apyMaxCell}</td>
         ${tvlHtml}
         <td><span class="risk-badge risk-${p.risk}">${riskLabelMap[p.risk] || p.risk}</span></td>
         <td class="mechanism-cell hide-mobile">
