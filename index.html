@@ -415,6 +415,12 @@
       margin-top: 1px;
     }
     .apy-null { color: var(--text-muted); }
+    .apy-max {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
 
     .tvl-cell {
       font-family: var(--font-mono);
@@ -572,7 +578,7 @@
 <section class="hero">
   <div class="hero-eyebrow">● Ranking Bitcoin DeFi 2026</div>
   <h1>Las mejores plataformas para<br><span class="accent">generar yield con Bitcoin</span></h1>
-  <p class="hero-desc">Análisis comparativo de protocolos DeFi para obtener rendimientos on-chain. Posiciones reordenadas por APY en tiempo real.</p>
+  <p class="hero-desc">Análisis comparativo de protocolos DeFi para obtener rendimientos on-chain. Ordenado por APY mínimo en tiempo real.</p>
 
   <div class="stats-grid" style="max-width: 600px; margin: 0 auto;">
     <div class="stat-card">
@@ -602,7 +608,7 @@
 
 <section class="controls">
   <span class="controls-label">Ordenar por:</span>
-  <button class="sort-btn active" data-sort="apy">📈 APY (mayor)</button>
+  <button class="sort-btn active" data-sort="apy">📈 APY min (mayor)</button>
   <button class="sort-btn" data-sort="risk">🛡️ Riesgo (menor)</button>
   <button class="sort-btn" data-sort="tvl">💰 TVL (mayor)</button>
   <button class="sort-btn" data-sort="default">🏆 Ranking original</button>
@@ -622,7 +628,8 @@
         <tr>
           <th>#</th>
           <th>Plataforma</th>
-          <th>APY</th>
+          <th>APY min</th>
+          <th class="hide-mobile">APY máx</th>
           <th class="hide-mobile">TVL</th>
           <th>Riesgo</th>
           <th class="hide-mobile">Mecanismo / Chain</th>
@@ -701,7 +708,7 @@
 
   // ── Sort comparators ──────────────────────────────────────────────
   const comparators = {
-    apy:    (a, b) => (b.apy_base ?? -999) - (a.apy_base ?? -999),
+    apy:    (a, b) => (b.apy_min ?? -999) - (a.apy_min ?? -999),
     risk:   (a, b) => riskScore(a.risk) - riskScore(b.risk),
     tvl:    (a, b) => (b.tvl_usd ?? 0)  - (a.tvl_usd ?? 0),
     default:(a, b) => a.rank - b.rank,
@@ -740,9 +747,16 @@
   function renderRow(p, pos) {
     const medal = pos === 1 ? 'rank-1' : pos === 2 ? 'rank-2' : pos === 3 ? 'rank-3' : '';
     const riskLabelMap = { low:'Bajo', med_low:'Bajo-Medio', med:'Medio', high:'Alto' };
-    const apyHtml = p.apy_base !== null
-      ? `<span class="apy-cell">${p.apy_display}</span><span class="apy-note">${p.apy_note || ''}</span>`
-      : `<span class="apy-cell apy-null">${p.apy_display}</span>`;
+    const apyMin = p.apy_min !== null ? p.apy_min : null;
+    const apyMax = p.apy_max !== null ? p.apy_max : null;
+    const hasRange = apyMin !== null && apyMax !== null && apyMin !== apyMax;
+
+    const apyMinCell = apyMin !== null
+      ? `<span class="apy-cell">${apyMin}%</span>`
+      : `<span class="apy-cell apy-null">—</span>`;
+    const apyMaxCell = apyMax !== null && hasRange
+      ? `<span class="apy-max">${apyMax}%</span>`
+      : '';
 
     const chainHtml = `<span class="chain-badge">${p.blockchain}</span>`;
 
@@ -775,7 +789,8 @@
           <div class="platform-meta">${p.type}</div>
           ${chainHtml}
         </td>
-        <td>${apyHtml}</td>
+        <td>${apyMinCell}</td>
+        <td class="hide-mobile">${apyMaxCell}</td>
         ${tvlHtml}
         <td><span class="risk-badge risk-${p.risk}">${riskLabelMap[p.risk] || p.risk}</span></td>
         <td class="mechanism-cell hide-mobile">
@@ -799,7 +814,7 @@
         ? '$' + (totalTvl/1e6).toFixed(0) + 'M'
         : '$' + totalTvl.toLocaleString();
     statCount.textContent = sorted.length;
-    const maxApy = Math.max(...sorted.filter(p => p.apy_base !== null).map(p => p.apy_base));
+    const maxApy = Math.max(...sorted.filter(p => p.apy_max !== null).map(p => p.apy_max));
     statMaxApy.textContent = maxApy > 0 ? maxApy.toFixed(1) + '%' : 'N/D';
   }
 

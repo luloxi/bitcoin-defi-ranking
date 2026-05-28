@@ -36,7 +36,9 @@
           "Phase 2 recién iniciada — TVL retraíble"
         ]
       },
-      "invest_url": "https://babylonlabs.io/staking"
+      "invest_url": "https://babylonlabs.io/staking",
+      "apy_min": 0.42,
+      "apy_max": 0.42
     },
     {
       "id": "core",
@@ -69,7 +71,9 @@
           "Yield en CORE token — exposición a tokenomics"
         ]
       },
-      "invest_url": "https://coredao.org/staking"
+      "invest_url": "https://coredao.org/staking",
+      "apy_min": 5.4,
+      "apy_max": 5.4
     },
     {
       "id": "stacks-sbtc",
@@ -101,7 +105,9 @@
           "ALEX Lab exploit $8.3M (jun-2025) golpeó credibilidad"
         ]
       },
-      "invest_url": "https://stacks.co/sbtc"
+      "invest_url": "https://stacks.co/sbtc",
+      "apy_min": 5.0,
+      "apy_max": 5.0
     },
     {
       "id": "bitlayer",
@@ -134,7 +140,9 @@
           "TVL retraído de peak $850M a $650M"
         ]
       },
-      "invest_url": "https://bitlayer.org/defi"
+      "invest_url": "https://bitlayer.org/defi",
+      "apy_min": 20.0,
+      "apy_max": 20.0
     },
     {
       "id": "sovryn",
@@ -167,7 +175,9 @@
           "RBTC bridge dependency"
         ]
       },
-      "invest_url": "https://sovryn.com/markets"
+      "invest_url": "https://sovryn.com/markets",
+      "apy_min": 0.29,
+      "apy_max": 0.29
     },
     {
       "id": "botanix",
@@ -200,7 +210,9 @@
           "Riesgo de centralización en sequencer"
         ]
       },
-      "invest_url": "https://app.botanix.xyz"
+      "invest_url": "https://app.botanix.xyz",
+      "apy_min": 8.0,
+      "apy_max": 8.0
     },
     {
       "id": "citrea",
@@ -233,7 +245,9 @@
           "Riesgo de centralización en prover"
         ]
       },
-      "invest_url": "https://citrea.xyz/alpha"
+      "invest_url": "https://citrea.xyz/alpha",
+      "apy_min": 6.0,
+      "apy_max": 6.0
     },
     {
       "id": "aave-btc",
@@ -265,7 +279,9 @@
           "Exposición a ETH fees"
         ]
       },
-      "invest_url": "https://app.aave.com/reserve-overview/?underlyingAsset=0x2260fac5e5542a773aa44fbcfedf7c193bc2c605"
+      "invest_url": "https://app.aave.com/reserve-overview/?underlyingAsset=0x2260fac5e5542a773aa44fbcfedf7c193bc2c605",
+      "apy_min": 2.0,
+      "apy_max": 5.0
     },
     {
       "id": "morpho-btc",
@@ -296,7 +312,9 @@
           "Bridge risk wBTC/tBTC persiste"
         ]
       },
-      "invest_url": "https://app.morpho.org/markets"
+      "invest_url": "https://app.morpho.org/markets",
+      "apy_min": 3.0,
+      "apy_max": 8.0
     },
     {
       "id": "compound-btc",
@@ -328,7 +346,9 @@
           "wBTC bridge risk"
         ]
       },
-      "invest_url": "https://app.compound.finance"
+      "invest_url": "https://app.compound.finance",
+      "apy_min": 1.0,
+      "apy_max": 3.0
     },
     {
       "id": "euler-btc",
@@ -361,7 +381,9 @@
           "wBTC bridge risk"
         ]
       },
-      "invest_url": "https://app.euler.finance"
+      "invest_url": "https://app.euler.finance",
+      "apy_min": 1.0,
+      "apy_max": 5.0
     },
     {
       "id": "gearbox-btc",
@@ -394,7 +416,9 @@
           "Margin calls = riesgo de liquidación"
         ]
       },
-      "invest_url": "https://app.gearbox.finance"
+      "invest_url": "https://app.gearbox.finance",
+      "apy_min": 2.0,
+      "apy_max": 6.0
     },
     {
       "id": "cream-btc",
@@ -426,7 +450,9 @@
           "Trust erosion post-hacks"
         ]
       },
-      "invest_url": "https://app.cream.finance"
+      "invest_url": "https://app.cream.finance",
+      "apy_min": 1.0,
+      "apy_max": 4.0
     },
     {
       "id": "yearn-btc",
@@ -459,7 +485,9 @@
           "Fee extraction (20% performance fee)"
         ]
       },
-      "invest_url": "https://yearn.finance/vaults"
+      "invest_url": "https://yearn.finance/vaults",
+      "apy_min": 2.0,
+      "apy_max": 6.0
     },
     {
       "id": "beefy-btc",
@@ -492,7 +520,9 @@
           "Vault strategies variable quality"
         ]
       },
-      "invest_url": "https://beefy.finance/vaults"
+      "invest_url": "https://beefy.finance/vaults",
+      "apy_min": 2.0,
+      "apy_max": 8.0
     },
     {
       "id": "pendle-btc",
@@ -525,7 +555,9 @@
           "Exposición a smart contracts Pendle"
         ]
       },
-      "invest_url": "https://app.pendle.xyz/markets"
+      "invest_url": "https://app.pendle.xyz/markets",
+      "apy_min": 1.0,
+      "apy_max": 5.0
     },
     {
       "id": "element-btc",
@@ -557,7 +589,9 @@
           "wBTC bridge risk"
         ]
       },
-      "invest_url": "https://elementdefi.com"
+      "invest_url": "https://elementdefi.com",
+      "apy_min": 2.0,
+      "apy_max": 5.0
     },
     {
       "id": "solvbtc",
@@ -590,7 +624,9 @@
           "Complejidad en validation de yields"
         ]
       },
-      "invest_url": "https://solv.io/mint"
+      "invest_url": "https://solv.io/mint",
+      "apy_min": 3.0,
+      "apy_max": 7.0
     },
     {
       "id": "stbtc",
@@ -623,7 +659,9 @@
           "Relativamente nuevo"
         ]
       },
-      "invest_url": "https://pstake.finance/staking"
+      "invest_url": "https://pstake.finance/staking",
+      "apy_min": 3.0,
+      "apy_max": 6.0
     },
     {
       "id": "eigenlayer-btc",
@@ -656,7 +694,9 @@
           "Complex slashing mechanics"
         ]
       },
-      "invest_url": "https://app.eigenlayer.xyz/restaking"
+      "invest_url": "https://app.eigenlayer.xyz/restaking",
+      "apy_min": 4.0,
+      "apy_max": 5.0
     },
     {
       "id": "curve-btc",
@@ -689,7 +729,9 @@
           "Impermanent loss risk en volatility pools"
         ]
       },
-      "invest_url": "https://curve.fi/pools"
+      "invest_url": "https://curve.fi/pools",
+      "apy_min": 1.0,
+      "apy_max": 4.0
     },
     {
       "id": "uniswap-btc",
@@ -722,7 +764,9 @@
           "Gas costs en Ethereum L1"
         ]
       },
-      "invest_url": "https://app.uniswap.org/pools"
+      "invest_url": "https://app.uniswap.org/pools",
+      "apy_min": 1.0,
+      "apy_max": 5.0
     },
     {
       "id": "velar",
@@ -755,7 +799,9 @@
           "Token incentives = sustainability questionable"
         ]
       },
-      "invest_url": "https://velar.io/pools"
+      "invest_url": "https://velar.io/pools",
+      "apy_min": 15.0,
+      "apy_max": 15.0
     },
     {
       "id": "alex-btc",
@@ -788,7 +834,9 @@
           "TVL 99%+ retraído post-attack"
         ]
       },
-      "invest_url": "https://alexlab.co/pools"
+      "invest_url": "https://alexlab.co/pools",
+      "apy_min": 3.0,
+      "apy_max": 8.0
     },
     {
       "id": "liquidium",
@@ -821,7 +869,9 @@
           "No audits formales públicos"
         ]
       },
-      "invest_url": "https://liquidium.io/lend"
+      "invest_url": "https://liquidium.io/lend",
+      "apy_min": null,
+      "apy_max": null
     },
     {
       "id": "lava",
@@ -854,7 +904,9 @@
           "Crítica de comunidad por cambio de modelo"
         ]
       },
-      "invest_url": "https://lavaprotocol.io/lend"
+      "invest_url": "https://lavaprotocol.io/lend",
+      "apy_min": 5.0,
+      "apy_max": 5.0
     },
     {
       "id": "zest",
@@ -887,7 +939,9 @@
           "Hereda risk de Stacks"
         ]
       },
-      "invest_url": "https://zestprotocol.io/lend"
+      "invest_url": "https://zestprotocol.io/lend",
+      "apy_min": 12.5,
+      "apy_max": 12.5
     },
     {
       "id": "spark-usdb",
@@ -919,7 +973,9 @@
           "TVL no conocido públicamente"
         ]
       },
-      "invest_url": "https://spark.money/savings"
+      "invest_url": "https://spark.money/savings",
+      "apy_min": 6.0,
+      "apy_max": 6.0
     },
     {
       "id": "solana-btc-dex",
@@ -952,7 +1008,9 @@
           "Solana network downtime risk"
         ]
       },
-      "invest_url": "https://jup.ag/stake"
+      "invest_url": "https://jup.ag/stake",
+      "apy_min": 1.0,
+      "apy_max": 5.0
     },
     {
       "id": "raydium-btc",
@@ -985,7 +1043,9 @@
           "Solana network risk"
         ]
       },
-      "invest_url": "https://raydium.io/pools"
+      "invest_url": "https://raydium.io/pools",
+      "apy_min": 1.0,
+      "apy_max": 6.0
     },
     {
       "id": "stride-btc",
@@ -1018,7 +1078,9 @@
           "stBTC wrapper risk"
         ]
       },
-      "invest_url": "https://stride.zone/stake"
+      "invest_url": "https://stride.zone/stake",
+      "apy_min": 4.0,
+      "apy_max": 7.0
     },
     {
       "id": "pstake-btc",
@@ -1051,7 +1113,9 @@
           "Slashing exposure si validador fail"
         ]
       },
-      "invest_url": "https://pstake.finance/staking"
+      "invest_url": "https://pstake.finance/staking",
+      "apy_min": 3.0,
+      "apy_max": 6.0
     },
     {
       "id": "cardano-lsd",
@@ -1084,7 +1148,9 @@
           "Auditorías no públicas"
         ]
       },
-      "invest_url": "https://liqprop.com"
+      "invest_url": "https://liqprop.com",
+      "apy_min": 3.0,
+      "apy_max": 6.0
     },
     {
       "id": "ardolik",
@@ -1116,7 +1182,9 @@
           "Auditorías no verificadas"
         ]
       },
-      "invest_url": "https://ardonik.io"
+      "invest_url": "https://ardonik.io",
+      "apy_min": 2.0,
+      "apy_max": 5.0
     },
     {
       "id": "sundaeswap-btc",
@@ -1149,7 +1217,9 @@
           "SUNDAE token incentives declining"
         ]
       },
-      "invest_url": "https://sundaeswap.finance/pools"
+      "invest_url": "https://sundaeswap.finance/pools",
+      "apy_min": 1.0,
+      "apy_max": 4.0
     },
     {
       "id": "minswap-btc",
@@ -1182,7 +1252,9 @@
           "Ecosistema incipiente"
         ]
       },
-      "invest_url": "https://minswap.org/pools"
+      "invest_url": "https://minswap.org/pools",
+      "apy_min": 1.0,
+      "apy_max": 5.0
     },
     {
       "id": "bisq",
@@ -1216,7 +1288,9 @@
           "Limitado a 0.0624 BTC por trade"
         ]
       },
-      "invest_url": "https://bisq.network/downloads"
+      "invest_url": "https://bisq.network/downloads",
+      "apy_min": null,
+      "apy_max": null
     },
     {
       "id": "robosats",
@@ -1250,7 +1324,9 @@
           "Tor dependency"
         ]
       },
-      "invest_url": "https://robosats6txyht2dd.onion"
+      "invest_url": "https://robosats6txyht2dd.onion",
+      "apy_min": null,
+      "apy_max": null
     },
     {
       "id": "liquid-rwa",
@@ -1283,7 +1359,9 @@
           "Regulatory risk (jurisdicción Hong Kong)"
         ]
       },
-      "invest_url": "https://liquid.net"
+      "invest_url": "https://liquid.net",
+      "apy_min": 2.0,
+      "apy_max": 5.0
     },
     {
       "id": "uniswap-bitcoin-l2",
@@ -1316,7 +1394,9 @@
           "Fragmentación cross-L2"
         ]
       },
-      "invest_url": "https://app.uniswap.org/pools"
+      "invest_url": "https://app.uniswap.org/pools",
+      "apy_min": 1.0,
+      "apy_max": 5.0
     },
     {
       "id": "revert-btc",
@@ -1349,7 +1429,9 @@
           "Estrategias son trade secrets"
         ]
       },
-      "invest_url": "https://revert.finance"
+      "invest_url": "https://revert.finance",
+      "apy_min": 2.0,
+      "apy_max": 6.0
     },
     {
       "id": "instadapp-btc",
@@ -1382,7 +1464,9 @@
           "Complexity = higher risk surface"
         ]
       },
-      "invest_url": "https://app.instadapp.io"
+      "invest_url": "https://app.instadapp.io",
+      "apy_min": 2.0,
+      "apy_max": 5.0
     },
     {
       "id": "maple-btc",
@@ -1415,7 +1499,9 @@
           "Liquidity riesgo en withdraws"
         ]
       },
-      "invest_url": "https://maple.finance/pools"
+      "invest_url": "https://maple.finance/pools",
+      "apy_min": 4.0,
+      "apy_max": 8.0
     }
   ]
 }
