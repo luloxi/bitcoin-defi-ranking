@@ -292,6 +292,29 @@
     .risk-med    { background: var(--orange-bg);  color: var(--orange);  border: 1px solid var(--orange-dim); }
     .risk-high   { background: var(--red-bg);    color: var(--red);    border: 1px solid var(--red-dim); }
 
+    /* ─── INVEST BUTTON ─── */
+    .invest-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      font-family: var(--font-mono);
+      color: var(--bitcoin);
+      background: var(--bitcoin-glow);
+      border: 1px solid var(--bitcoin-dim);
+      padding: 5px 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+    .invest-btn:hover {
+      background: var(--bitcoin);
+      color: #fff;
+      border-color: var(--bitcoin);
+    }
+
     /* ─── TABLE ─── */
     .table-section {
       max-width: 1100px;
@@ -603,6 +626,7 @@
           <th class="hide-mobile">TVL</th>
           <th>Riesgo</th>
           <th class="hide-mobile">Mecanismo / Chain</th>
+          <th>Acceder</th>
           <th>Factores</th>
         </tr>
       </thead>
@@ -739,6 +763,10 @@
          </div>`
       : '—';
 
+    const investBtn = p.invest_url
+      ? `<a href="${p.invest_url}" target="_blank" rel="noopener" class="invest-btn">Invertir →</a>`
+      : '';
+
     return `
       <tr class="${medal}">
         ${posHtml}
@@ -754,6 +782,7 @@
           ${p.mechanism}<br>
           <small>${p.mechanism_note}</small>
         </td>
+        <td>${investBtn}</td>
         <td>${factorsHtml}</td>
       </tr>
     `;
