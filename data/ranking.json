@@ -71,7 +71,7 @@
           "Yield en CORE token — exposición a tokenomics"
         ]
       },
-      "invest_url": "https://coredao.org/staking",
+      "invest_url": "https://stake.coredao.org/",
       "apy_min": 5.4,
       "apy_max": 5.4
     },
@@ -175,7 +175,7 @@
           "RBTC bridge dependency"
         ]
       },
-      "invest_url": "https://sovryn.com/markets",
+      "invest_url": "https://sovryn.app/",
       "apy_min": 0.29,
       "apy_max": 0.29
     },
@@ -245,7 +245,7 @@
           "Riesgo de centralización en prover"
         ]
       },
-      "invest_url": "https://citrea.xyz/alpha",
+      "invest_url": "https://citrea.xyz/stake",
       "apy_min": 6.0,
       "apy_max": 6.0
     },
@@ -520,7 +520,7 @@
           "Vault strategies variable quality"
         ]
       },
-      "invest_url": "https://beefy.finance/vaults",
+      "invest_url": "https://beefy.com/",
       "apy_min": 2.0,
       "apy_max": 8.0
     },
@@ -555,7 +555,7 @@
           "Exposición a smart contracts Pendle"
         ]
       },
-      "invest_url": "https://app.pendle.xyz/markets",
+      "invest_url": "https://www.pendle.finance/",
       "apy_min": 1.0,
       "apy_max": 5.0
     },
@@ -659,7 +659,7 @@
           "Relativamente nuevo"
         ]
       },
-      "invest_url": "https://pstake.finance/staking",
+      "invest_url": "https://app.pstake.finance/",
       "apy_min": 3.0,
       "apy_max": 6.0
     },
@@ -694,7 +694,7 @@
           "Complex slashing mechanics"
         ]
       },
-      "invest_url": "https://app.eigenlayer.xyz/restaking",
+      "invest_url": "https://www.eigenlayer.xyz/",
       "apy_min": 4.0,
       "apy_max": 5.0
     },
@@ -799,7 +799,7 @@
           "Token incentives = sustainability questionable"
         ]
       },
-      "invest_url": "https://velar.io/pools",
+      "invest_url": "https://app.velar.io/",
       "apy_min": 15.0,
       "apy_max": 15.0
     },
@@ -973,7 +973,7 @@
           "TVL no conocido públicamente"
         ]
       },
-      "invest_url": "https://spark.money/savings",
+      "invest_url": "https://sparkprotocol.io/",
       "apy_min": 6.0,
       "apy_max": 6.0
     },
@@ -1078,7 +1078,7 @@
           "stBTC wrapper risk"
         ]
       },
-      "invest_url": "https://stride.zone/stake",
+      "invest_url": "https://stride.zone/",
       "apy_min": 4.0,
       "apy_max": 7.0
     },
@@ -1113,7 +1113,7 @@
           "Slashing exposure si validador fail"
         ]
       },
-      "invest_url": "https://pstake.finance/staking",
+      "invest_url": "https://app.pstake.finance/",
       "apy_min": 3.0,
       "apy_max": 6.0
     },
@@ -1217,7 +1217,7 @@
           "SUNDAE token incentives declining"
         ]
       },
-      "invest_url": "https://sundaeswap.finance/pools",
+      "invest_url": "https://v2.sundaeswap.finance/",
       "apy_min": 1.0,
       "apy_max": 4.0
     },
@@ -1252,7 +1252,7 @@
           "Ecosistema incipiente"
         ]
       },
-      "invest_url": "https://minswap.org/pools",
+      "invest_url": "https://minswap.org/",
       "apy_min": 1.0,
       "apy_max": 5.0
     },
