@@ -631,11 +631,12 @@
         <tr>
           <th>#</th>
           <th>Plataforma</th>
+          <th>Cadena</th>
           <th>APY min</th>
           <th>APY máx</th>
           <th class="hide-mobile">TVL</th>
           <th>Riesgo</th>
-          <th class="hide-mobile">Mecanismo / Chain</th>
+          <th class="hide-mobile">Mecanismo</th>
           <th>Acceder</th>
           <th>Factores</th>
         </tr>
@@ -651,7 +652,7 @@
   <h2>Metodología</h2>
   <div class="methodology-grid">
     <div class="method-card">
-      <h3><span class="method-icon">⛓</span> Seguridad blockchain</h3>
+      <h3><span class="method-icon">⛓️</span> Seguridad blockchain</h3>
       <p>Se evalúa la seguridad de la capa base: Bitcoin L1 > Bitcoin L2 > Ethereum > sidechains. Cada capa tiene trade-offs distintos de finalidad y censorship resistance.</p>
     </div>
     <div class="method-card">
@@ -761,9 +762,15 @@
       ? `<span class="apy-max">${apyMax}%</span>`
       : '';
 
-    const chainHtml = `<span class="chain-badge">${p.blockchain}</span>`;
+    const chainBadge = `<span class="chain-badge">${p.blockchain}</span>`;
 
     const posHtml = `<td class="rank-cell">${pos}</td>`;
+    const platformCell = `
+      <td class="platform-cell">
+        <div class="platform-name"><a href="${p.url}" target="_blank" rel="noopener">${p.name}</a></div>
+        <div class="platform-meta">${p.category || ''}</div>
+      </td>`;
+    const chainCell = `<td>${chainBadge}</td>`;
 
     const tvlHtml = p.tvl_usd !== null || p.tvl_btc !== null
       ? `<td class="tvl-cell">${fmtTvl(p.tvl_usd, p.tvl_btc)}</td>`
@@ -787,11 +794,8 @@
     return `
       <tr class="${medal}">
         ${posHtml}
-        <td class="platform-cell">
-          <div class="platform-name"><a href="${p.url}" target="_blank" rel="noopener">${p.name}</a></div>
-          <div class="platform-meta">${p.type}</div>
-          ${chainHtml}
-        </td>
+        ${platformCell}
+        ${chainCell}
         <td>${apyMinCell}</td>
         <td>${apyMaxCell}</td>
         ${tvlHtml}
