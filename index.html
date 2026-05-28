@@ -343,6 +343,7 @@
       overflow-x: auto;
       border-radius: 16px;
       border: 1px solid var(--border);
+      -webkit-overflow-scrolling: touch;
     }
     table {
       width: 100%;
@@ -542,16 +543,12 @@
     }
 
     @media (max-width: 640px) {
-      .hide-mobile { display: none; }
       .hero { padding: 44px 24px 36px; }
       th, td { padding: 11px 10px; }
       .table-wrapper { border-radius: 12px; }
       table { min-width: 640px; }
       .apy-max { font-size: 11px; }
       .invest-btn { padding: 4px 8px; font-size: 11px; }
-    }
-    @media (min-width: 641px) {
-      .hide-desktop { display: none; }
     }
   </style>
 </head>
@@ -634,12 +631,12 @@
         <tr>
           <th>#</th>
           <th>Plataforma</th>
-          <th class="hide-desktop">Cadena</th>
           <th>APY min</th>
           <th>APY máx</th>
+          <th>Cadena</th>
           <th>TVL</th>
           <th>Riesgo</th>
-          <th class="hide-desktop">Mecanismo</th>
+          <th>Mecanismo</th>
           <th>Acceder</th>
           <th>Factores</th>
         </tr>
@@ -793,19 +790,19 @@
       : '';
 
     const riskCell = `<td><span class="risk-badge risk-${p.risk}">${riskLabelMap[p.risk] || p.risk}</span></td>`;
-    const mechanismCell = `<td class="mechanism-cell hide-desktop">
+    const mechanismCell = `<td class="mechanism-cell">
       ${p.mechanism}<br>
       <small>${p.mechanism_note}</small>
     </td>`;
-    const chainCell = `<td class="hide-desktop">${chainBadge}</td>`;
+    const chainCell = `<td>${chainBadge}</td>`;
 
     return `
       <tr class="${medal}">
         ${posHtml}
         ${platformCell}
-        ${chainCell}
         <td>${apyMinCell}</td>
         <td>${apyMaxCell}</td>
+        ${chainCell}
         ${tvlHtml}
         ${riskCell}
         ${mechanismCell}
