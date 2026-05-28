@@ -543,6 +543,7 @@
 
     @media (max-width: 640px) {
       .hide-mobile { display: none; }
+      .show-mobile-only { display: table-cell; }
       .hero { padding: 44px 24px 36px; }
       th, td { padding: 11px 10px; }
       .table-wrapper { border-radius: 12px; }
@@ -631,13 +632,14 @@
         <tr>
           <th>#</th>
           <th>Plataforma</th>
-          <th>Cadena</th>
+          <th class="hide-mobile">Cadena</th>
           <th>APY min</th>
           <th>APY máx</th>
+          <th class="show-mobile-only">TVL</th>
           <th class="hide-mobile">TVL</th>
           <th>Riesgo</th>
           <th class="hide-mobile">Mecanismo</th>
-          <th>Acceder</th>
+          <th class="hide-mobile">Acceder</th>
           <th>Factores</th>
         </tr>
       </thead>
