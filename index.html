@@ -543,13 +543,15 @@
 
     @media (max-width: 640px) {
       .hide-mobile { display: none; }
-      .show-mobile-only { display: table-cell; }
       .hero { padding: 44px 24px 36px; }
       th, td { padding: 11px 10px; }
       .table-wrapper { border-radius: 12px; }
       table { min-width: 640px; }
       .apy-max { font-size: 11px; }
       .invest-btn { padding: 4px 8px; font-size: 11px; }
+    }
+    @media (min-width: 641px) {
+      .hide-desktop { display: none; }
     }
   </style>
 </head>
@@ -632,14 +634,13 @@
         <tr>
           <th>#</th>
           <th>Plataforma</th>
-          <th class="hide-mobile">Cadena</th>
+          <th class="hide-desktop">Cadena</th>
           <th>APY min</th>
           <th>APY máx</th>
-          <th class="show-mobile-only">TVL</th>
-          <th class="hide-mobile">TVL</th>
+          <th>TVL</th>
           <th>Riesgo</th>
-          <th class="hide-mobile">Mecanismo</th>
-          <th class="hide-mobile">Acceder</th>
+          <th class="hide-desktop">Mecanismo</th>
+          <th>Acceder</th>
           <th>Factores</th>
         </tr>
       </thead>
@@ -772,8 +773,6 @@
         <div class="platform-name"><a href="${p.url}" target="_blank" rel="noopener">${p.name}</a></div>
         <div class="platform-meta">${p.category || ''}</div>
       </td>`;
-    const chainCell = `<td>${chainBadge}</td>`;
-
     const tvlHtml = p.tvl_usd !== null || p.tvl_btc !== null
       ? `<td class="tvl-cell">${fmtTvl(p.tvl_usd, p.tvl_btc)}</td>`
       : `<td class="tvl-cell">${p.tvl_display || 'N/D'}</td>`;
@@ -793,6 +792,13 @@
       ? `<a href="${p.invest_url}" target="_blank" rel="noopener" class="invest-btn">Invertir →</a>`
       : '';
 
+    const riskCell = `<td><span class="risk-badge risk-${p.risk}">${riskLabelMap[p.risk] || p.risk}</span></td>`;
+    const mechanismCell = `<td class="mechanism-cell hide-desktop">
+      ${p.mechanism}<br>
+      <small>${p.mechanism_note}</small>
+    </td>`;
+    const chainCell = `<td class="hide-desktop">${chainBadge}</td>`;
+
     return `
       <tr class="${medal}">
         ${posHtml}
@@ -801,11 +807,8 @@
         <td>${apyMinCell}</td>
         <td>${apyMaxCell}</td>
         ${tvlHtml}
-        <td><span class="risk-badge risk-${p.risk}">${riskLabelMap[p.risk] || p.risk}</span></td>
-        <td class="mechanism-cell hide-mobile">
-          ${p.mechanism}<br>
-          <small>${p.mechanism_note}</small>
-        </td>
+        ${riskCell}
+        ${mechanismCell}
         <td>${investBtn}</td>
         <td>${factorsHtml}</td>
       </tr>
