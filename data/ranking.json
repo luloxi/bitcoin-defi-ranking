@@ -1,12 +1,12 @@
 {
   "meta": {
-    "updated_at": "2026-05-27T00:00:00-03:00",
+    "updated_at": "2026-05-29T00:52:05-0300",
     "source": "Research: Coin Bureau, Messari, Spark, Babylon, DeFiLlama (may 2026). TVL from DeFiLlama live API."
   },
   "platforms": [
     {
       "id": "babylon",
-      "rank": 1,
+      "rank": 42,
       "name": "Babylon",
       "url": "https://babylonlabs.io",
       "blockchain": "Bitcoin L1",
@@ -42,7 +42,7 @@
     },
     {
       "id": "core",
-      "rank": 2,
+      "rank": 9,
       "name": "Core Chain",
       "url": "https://coredao.org",
       "blockchain": "Bitcoin L1",
@@ -77,7 +77,7 @@
     },
     {
       "id": "stacks-sbtc",
-      "rank": 3,
+      "rank": 10,
       "name": "Stacks — sBTC",
       "url": "https://stacks.co",
       "blockchain": "Stacks (Bitcoin L2)",
@@ -111,7 +111,7 @@
     },
     {
       "id": "bitlayer",
-      "rank": 4,
+      "rank": 1,
       "name": "Bitlayer",
       "url": "https://bitlayer.org",
       "blockchain": "Bitcoin L2 (BitVM)",
@@ -146,7 +146,7 @@
     },
     {
       "id": "sovryn",
-      "rank": 5,
+      "rank": 44,
       "name": "Sovryn",
       "url": "https://sovryn.com",
       "blockchain": "Rootstock (RSK)",
@@ -181,7 +181,7 @@
     },
     {
       "id": "botanix",
-      "rank": 6,
+      "rank": 5,
       "name": "Botanix",
       "url": "https://botanixlabs.org",
       "blockchain": "Bitcoin L2 (EVM)",
@@ -216,7 +216,7 @@
     },
     {
       "id": "citrea",
-      "rank": 7,
+      "rank": 6,
       "name": "Citrea",
       "url": "https://citrea.xyz",
       "blockchain": "Bitcoin L2 (ZK Rollup)",
@@ -251,7 +251,7 @@
     },
     {
       "id": "aave-btc",
-      "rank": 8,
+      "rank": 24,
       "name": "Aave — wBTC / tBTC",
       "url": "https://aave.com",
       "blockchain": "Ethereum",
@@ -285,7 +285,7 @@
     },
     {
       "id": "morpho-btc",
-      "rank": 9,
+      "rank": 8,
       "name": "Morpho — BTC Markets",
       "url": "https://morpho.org",
       "blockchain": "Ethereum",
@@ -318,7 +318,7 @@
     },
     {
       "id": "compound-btc",
-      "rank": 10,
+      "rank": 38,
       "name": "Compound — wBTC",
       "url": "https://compound.finance",
       "blockchain": "Ethereum",
@@ -352,7 +352,7 @@
     },
     {
       "id": "euler-btc",
-      "rank": 11,
+      "rank": 29,
       "name": "Euler",
       "url": "https://euler.finance",
       "blockchain": "Ethereum",
@@ -387,7 +387,7 @@
     },
     {
       "id": "gearbox-btc",
-      "rank": 12,
+      "rank": 21,
       "name": "Gearbox",
       "url": "https://gearbox.finance",
       "blockchain": "Ethereum",
@@ -422,7 +422,7 @@
     },
     {
       "id": "cream-btc",
-      "rank": 13,
+      "rank": 34,
       "name": "Cream Finance",
       "url": "https://creamfinance.io",
       "blockchain": "Ethereum",
@@ -456,7 +456,7 @@
     },
     {
       "id": "yearn-btc",
-      "rank": 14,
+      "rank": 22,
       "name": "Yearn Finance — wBTC vault",
       "url": "https://yearn.finance",
       "blockchain": "Ethereum",
@@ -491,7 +491,7 @@
     },
     {
       "id": "beefy-btc",
-      "rank": 15,
+      "rank": 17,
       "name": "Beefy Finance",
       "url": "https://beefy.finance",
       "blockchain": "Multi-chain",
@@ -526,7 +526,7 @@
     },
     {
       "id": "pendle-btc",
-      "rank": 16,
+      "rank": 30,
       "name": "Pendle — BTC Yield",
       "url": "https://pendle.xyz",
       "blockchain": "Ethereum",
@@ -561,7 +561,7 @@
     },
     {
       "id": "element-btc",
-      "rank": 17,
+      "rank": 25,
       "name": "Element Finance",
       "url": "https://elementdefi.com",
       "blockchain": "Ethereum",
@@ -595,7 +595,7 @@
     },
     {
       "id": "solvbtc",
-      "rank": 18,
+      "rank": 11,
       "name": "SolvBTC / Solv Protocol",
       "url": "https://solv.io",
       "blockchain": "Multi-chain (ETH, BSC, etc.)",
@@ -630,7 +630,7 @@
     },
     {
       "id": "stbtc",
-      "rank": 19,
+      "rank": 18,
       "name": "stBTC (pSTAKE)",
       "url": "https://pstake.finance",
       "blockchain": "Ethereum",
@@ -665,7 +665,7 @@
     },
     {
       "id": "eigenlayer-btc",
-      "rank": 20,
+      "rank": 19,
       "name": "EigenLayer — BTC Restaking",
       "url": "https://eigenlayer.xyz",
       "blockchain": "Ethereum",
@@ -700,7 +700,7 @@
     },
     {
       "id": "curve-btc",
-      "rank": 21,
+      "rank": 39,
       "name": "Curve — wBTC / BTC pools",
       "url": "https://curve.fi",
       "blockchain": "Ethereum",
@@ -735,7 +735,7 @@
     },
     {
       "id": "uniswap-btc",
-      "rank": 22,
+      "rank": 35,
       "name": "Uniswap — wBTC pools",
       "url": "https://uniswap.org",
       "blockchain": "Ethereum",
@@ -770,7 +770,7 @@
     },
     {
       "id": "velar",
-      "rank": 23,
+      "rank": 3,
       "name": "Velar",
       "url": "https://velar.io",
       "blockchain": "Stacks (Bitcoin L2)",
@@ -805,7 +805,7 @@
     },
     {
       "id": "alex-btc",
-      "rank": 24,
+      "rank": 12,
       "name": "ALEX Lab",
       "url": "https://alexlab.co",
       "blockchain": "Stacks (Bitcoin L2)",
@@ -840,7 +840,7 @@
     },
     {
       "id": "liquidium",
-      "rank": 25,
+      "rank": 45,
       "name": "Liquidium",
       "url": "https://liquidium.io",
       "blockchain": "Bitcoin L1 (DLCs)",
@@ -875,7 +875,7 @@
     },
     {
       "id": "lava",
-      "rank": 26,
+      "rank": 13,
       "name": "Lava",
       "url": "https://lavaproTOCOL.io",
       "blockchain": "Ethereum (custodial pivot)",
@@ -910,7 +910,7 @@
     },
     {
       "id": "zest",
-      "rank": 27,
+      "rank": 4,
       "name": "Zest Protocol",
       "url": "https://zestprotocol.io",
       "blockchain": "Stacks (Bitcoin L2)",
@@ -945,7 +945,7 @@
     },
     {
       "id": "spark-usdb",
-      "rank": 28,
+      "rank": 7,
       "name": "Spark — USDB",
       "url": "https://spark.money",
       "blockchain": "Bitcoin / Ethereum",
@@ -979,7 +979,7 @@
     },
     {
       "id": "solana-btc-dex",
-      "rank": 29,
+      "rank": 31,
       "name": "Jupiter — wBTC pools",
       "url": "https://jup.ag",
       "blockchain": "Solana",
@@ -1014,7 +1014,7 @@
     },
     {
       "id": "raydium-btc",
-      "rank": 30,
+      "rank": 26,
       "name": "Raydium — wBTC pools",
       "url": "https://raydium.io",
       "blockchain": "Solana",
@@ -1049,7 +1049,7 @@
     },
     {
       "id": "stride-btc",
-      "rank": 31,
+      "rank": 14,
       "name": "Stride — stBTC",
       "url": "https://stride.zone",
       "blockchain": "Cosmos",
@@ -1084,7 +1084,7 @@
     },
     {
       "id": "pstake-btc",
-      "rank": 32,
+      "rank": 20,
       "name": "pSTAKE — stkBTC",
       "url": "https://pstake.finance",
       "blockchain": "Cosmos / ETH",
@@ -1119,7 +1119,7 @@
     },
     {
       "id": "cardano-lsd",
-      "rank": 33,
+      "rank": 23,
       "name": "Li Propulsion (LiqPlat)",
       "url": "https://liqprop.com",
       "blockchain": "Cardano",
@@ -1154,7 +1154,7 @@
     },
     {
       "id": "ardolik",
-      "rank": 34,
+      "rank": 27,
       "name": "Ardonik",
       "url": "https://ardonik.io",
       "blockchain": "Cardano",
@@ -1188,7 +1188,7 @@
     },
     {
       "id": "sundaeswap-btc",
-      "rank": 35,
+      "rank": 40,
       "name": "SundaeSwap",
       "url": "https://sundaeswap.finance",
       "blockchain": "Cardano",
@@ -1258,7 +1258,7 @@
     },
     {
       "id": "bisq",
-      "rank": 37,
+      "rank": 46,
       "name": "Bisq 2",
       "url": "https://bisq.network",
       "blockchain": "Bitcoin L1 (P2P)",
@@ -1294,7 +1294,7 @@
     },
     {
       "id": "robosats",
-      "rank": 38,
+      "rank": 47,
       "name": "RoboSats",
       "url": "https://robosats6txyht2dd.onion/",
       "blockchain": "Lightning Network (P2P)",
@@ -1330,7 +1330,7 @@
     },
     {
       "id": "liquid-rwa",
-      "rank": 39,
+      "rank": 32,
       "name": "Liquid Network — RWA",
       "url": "https://liquid.net",
       "blockchain": "Liquid (Bitfinex)",
@@ -1365,7 +1365,7 @@
     },
     {
       "id": "uniswap-bitcoin-l2",
-      "rank": 40,
+      "rank": 37,
       "name": "Uniswap — Bitcoin L2s",
       "url": "https://uniswap.org",
       "blockchain": "Arbitrum / Base / Optimism",
@@ -1400,7 +1400,7 @@
     },
     {
       "id": "revert-btc",
-      "rank": 41,
+      "rank": 28,
       "name": "Revert Finance",
       "url": "https://revert.finance",
       "blockchain": "Ethereum",
@@ -1435,7 +1435,7 @@
     },
     {
       "id": "instadapp-btc",
-      "rank": 42,
+      "rank": 33,
       "name": "Instadapp",
       "url": "https://instadapp.io",
       "blockchain": "Multi-chain",
@@ -1470,7 +1470,7 @@
     },
     {
       "id": "maple-btc",
-      "rank": 43,
+      "rank": 15,
       "name": "Maple Finance",
       "url": "https://maple.finance",
       "blockchain": "Ethereum",
@@ -1502,6 +1502,150 @@
       "invest_url": "https://maple.finance/pools",
       "apy_min": 4.0,
       "apy_max": 8.0
+    },
+    {
+      "id": "benqi-btcb",
+      "rank": 2,
+      "name": "BENQI (BTC.b)",
+      "url": "https://benqi.fi",
+      "blockchain": "Avalanche",
+      "category": "Lending (BTC.b)",
+      "mechanism": "Supply & borrow BTC.b en mercado nativo de Avalanche",
+      "mechanism_note": "Mercado de BTC.b sobre la C-chain de Avalanche. Baja fees, alta velocidad de liquidación.",
+      "apy_base": 15.07,
+      "apy_display": "~15.07%",
+      "apy_note": "~15% para supply de BTC.b — una de las tasas más altas para BTC en DeFi (may 2026)",
+      "tvl_usd": 29700000,
+      "tvl_btc": null,
+      "tvl_display": "$29.7M (Benqi total TVL, BTC.b pool activo)",
+      "risk": "medium",
+      "risk_label": "Medio",
+      "custody": "Non-custodial",
+      "audit": "Audited — establecido en Avalanche desde 2021",
+      "factors": {
+        "positive": [
+          "Tasa de supply excepcionalmente alta (~15%) para BTC.b",
+          "Non-custodial — assets stay in your wallet",
+          "TVL probado ($1B+ históricos en 2021)",
+          "C-chain de Avalanche: fees muy bajos (<$0.01 por tx)"
+        ],
+        "negative": [
+          "BTC.b no es Bitcoin nativo — wrapped de Curve (Multichain)",
+          "Riesgo de smart contract en el wrap de BTC.b",
+          "Mercado relativamente pequeño comparado con WBTC en Ethereum"
+        ]
+      },
+      "invest_url": "https://app.benqi.fi/markets",
+      "apy_min": 10.0,
+      "apy_max": 20.0
+    },
+    {
+      "id": "aave-v3-avalanche",
+      "rank": 41,
+      "name": "Aave V3 (Avalanche)",
+      "url": "https://aave.com",
+      "blockchain": "Avalanche",
+      "category": "Lending (wBTC, cbBTC)",
+      "mechanism": "Supply wBTC.E en Aave V3 sobre Avalanche C-chain",
+      "mechanism_note": "Aave V3 deployed en Avalanche. Soporta wBTC.E y cbBTC como collateral. Estrategia: depositar BTC, borrow stablecoins.",
+      "apy_base": 0.5,
+      "apy_display": "~0.5-2%",
+      "apy_note": "Supply APY para wBTC.E bajo (<1%) — mayor valor estratégico como collateral para borrow de stablecoins",
+      "tvl_usd": 350000000,
+      "tvl_btc": null,
+      "tvl_display": "$350M (Aave V3 Avalanche total TVL)",
+      "risk": "low",
+      "risk_label": "Bajo",
+      "custody": "Non-custodial",
+      "audit": "Multiple audits — $14B+ TVL histórico en Aave V3",
+      "factors": {
+        "positive": [
+          "Largest lending protocol en Avalanche (~40% del TVL de la chain)",
+          "Auditado múltiples veces — estándar de la industria",
+          "wBTC.E integrado",
+          "Posibilidad leverage: deposit BTC, borrow USDC, reinvest"
+        ],
+        "negative": [
+          "Supply APY para BTC es bajo (~0.5%)",
+          "Riesgo de liquidation si el precio del BTC cae",
+          "Wrapper WBTC tiene riesgo de bridge/custodial"
+        ]
+      },
+      "invest_url": "https://app.aave.com",
+      "apy_min": 0.5,
+      "apy_max": 2.0
+    },
+    {
+      "id": "aave-v3-arbitrum",
+      "rank": 43,
+      "name": "Aave V3 (Arbitrum)",
+      "url": "https://aave.com",
+      "blockchain": "Arbitrum",
+      "category": "Lending (wBTC, cbBTC)",
+      "mechanism": "Supply wBTC en Aave V3 sobre Arbitrum — usar BTC como collateral para borrow de USDC/ETH",
+      "mechanism_note": "Aave V3 en Arbitrum: ~40% del TVL de la chain. Fees bajos ($0.10-0.50). Estrategia leverage disponible.",
+      "apy_base": 0.3,
+      "apy_display": "~0.3-1%",
+      "apy_note": "Supply APY para wBTC <1%. Estrategia: deposit wBTC, borrow USDC, earn >5% en stablecoin lending.",
+      "tvl_usd": 71610000,
+      "tvl_btc": null,
+      "tvl_display": "$71.6M (Aave V3 Arbitrum BTC markets TVL)",
+      "risk": "low",
+      "risk_label": "Bajo",
+      "custody": "Non-custodial",
+      "audit": "Multiple audits — $14B+ TVL histórico en Aave V3",
+      "factors": {
+        "positive": [
+          "40% del TVL de Arbitrum — deepest liquidity",
+          "Fees de Arbitrum son bajos ($0.10-0.50 por tx)",
+          "Estrategia leverage: supply wBTC, borrow USDC, earn >5% en stablecoin lending",
+          "Auditado por Trail of Bits, OpenZeppelin, Certora"
+        ],
+        "negative": [
+          "Supply APY para wBTC es casi 0 — no es rentable hold-and-earn",
+          "Riesgo de liquidation en estrategias con leverage",
+          "WBTC es un wrapper custodial"
+        ]
+      },
+      "invest_url": "https://app.aave.com",
+      "apy_min": 0.3,
+      "apy_max": 1.0
+    },
+    {
+      "id": "gmx-arb-btc-perp",
+      "rank": 16,
+      "name": "GMX (Arbitrum — BTC Perpetuals)",
+      "url": "https://gmx.io",
+      "blockchain": "Arbitrum",
+      "category": "Perpetual Futures (BTC)",
+      "mechanism": "Trade perpetuals de BTC con hasta 50x leverage. GLP holders son liquidity providers y reciben fees del trading.",
+      "mechanism_note": "GMX es un protocolo de perpetuals descentralizado en Arbitrum y Avalanche. Los LP (GLP holders) proveen liquidez y comparten fees + rewards del trading de BTC perpetuals.",
+      "apy_base": 5.0,
+      "apy_display": "~5-12% (LP fees para GLP holders)",
+      "apy_note": "~5-12% APY para holders de GLP (GMX LP token) — generado por trading fees de BTC perpetuals",
+      "tvl_usd": 118000000,
+      "tvl_btc": null,
+      "tvl_display": "$118M (GMX GLP TVL total en Arbitrum + Avalanche)",
+      "risk": "medium-high",
+      "risk_label": "Medio-Alto",
+      "custody": "Non-custodial",
+      "audit": "Audited by Sherlock, Hygood — smart contracts verificados",
+      "factors": {
+        "positive": [
+          "Perpetuals de BTC con hasta 50x leverage",
+          "LP fees del trading: ~$500K+/semana en fees de BTC perpetuals",
+          "Non-custodial — el protocolo no tiene acceso a tus funds",
+          "TVL probada — $118M+ en GLP"
+        ],
+        "negative": [
+          "GLP es un token multi-asset que incluye BTC —su precio puede variar",
+          "Riesgo de impermanent loss para LP",
+          "Estrategia avanzada — no es 'hold and earn'"
+        ]
+      },
+      "invest_url": "https://gmx.io/#/?ref=earngmx",
+      "apy_min": 5.0,
+      "apy_max": 12.0
     }
   ]
 }
